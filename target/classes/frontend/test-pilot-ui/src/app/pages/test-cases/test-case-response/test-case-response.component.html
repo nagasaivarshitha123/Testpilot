@@ -1,0 +1,167 @@
+<div class="response_panel_container">
+  <p>Response</p>
+
+  <div class="info">
+    <div class="info_row">
+      <h4>Status:</h4>
+      <span>{{ metaData?.status }}</span>
+    </div>
+
+    <div class="info_row">
+      <h4>Time:</h4>
+      <span>{{ metaData?.time }}</span>
+    </div>
+
+    <div class="info_row">
+      <h4>Size:</h4>
+      <span>{{ metaData?.size }}</span>
+    </div>
+  </div>
+
+  <div class="tabs_container">
+    <mat-tab-group animationDuration="0ms" [(selectedIndex)]="selectedIndex">
+      <mat-tab label="XML">No Content</mat-tab>
+      <mat-tab label="HTML">No Content</mat-tab>
+      <mat-tab label="JSON">
+        <mat-tab-group
+          animationDuration="0ms"
+          mat-stretch-tabs
+          class="second_tabs"
+          [(selectedIndex)]="selectedChildIndex"
+        >
+          <mat-tab label="HEADERS">
+            <pre *ngIf="jsonHeadersData !== null">{{
+              jsonHeadersData | json : 4
+            }}</pre>
+          </mat-tab>
+          <mat-tab label="BODY">
+            <pre *ngIf="jsonData !== null">{{ jsonData | json : 4 }}</pre>
+          </mat-tab>
+          <mat-tab label="ASSERTIONS">
+            <div class="bar_container">
+              <span class="left">{{ passedCount }} Passed</span>
+              <span class="right">{{ failedCount }} Failed</span>
+            </div>
+            <div class="linear_gradient">
+              <div
+                [ngStyle]="{ width: barWidth }"
+                style="background: #219653; height: 10px; border-radius: 5px"
+              ></div>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+              "
+              class="horiz"
+            >
+              <table>
+                <thead>
+                  <th>Sl.No.</th>
+                  <th>Type</th>
+                  <th>Path</th>
+                  <th>Comparison</th>
+                  <th>Expected</th>
+                  <th>Actual</th>
+                  <th>Status</th>
+                </thead>
+
+                <tbody>
+                  <tr
+                    *ngFor="let assertion of assertions; let i = index"
+                    [ngStyle]="{
+                      backgroundColor: i % 2 == 0 ? '#F6FBFF' : '#ffffff'
+                    }"
+                  >
+                    <td align="center">{{ i + 1 }}.</td>
+                    <td align="center">{{ assertion.assertionType }}</td>
+                    <td align="center">
+                      <!-- <div class="tooltip"> -->
+                      <p
+                        style="
+                          display: -webkit-box;
+                          -webkit-box-orient: vertical;
+                          -webkit-line-clamp: 2;
+                          overflow: hidden;
+                          width: 100%;
+                          height: auto;
+                          cursor: pointer;
+                        "
+                        pTooltip="{{ assertion.path }}"
+                        showDelay="600"
+                      >
+                        {{ assertion.path }}
+                      </p>
+                      <!-- <span class="tooltiptext">{{ assertion.path }}</span> -->
+                      <!-- </div> -->
+                    </td>
+                    <td align="center">{{ assertion.comparison }}</td>
+                    <td align="center">
+                      <!-- <div
+                        pTooltip="{{ assertion.value }}"
+                        fitContent
+                        tooltipPosition="left"
+                      > -->
+                      <p
+                        style="
+                          display: -webkit-box;
+                          -webkit-box-orient: vertical;
+                          -webkit-line-clamp: 2;
+                          overflow: hidden;
+                          width: 100%;
+                          height: auto;
+                          cursor: pointer;
+                        "
+                        pTooltip="{{ assertion.value }}"
+                        showDelay="600"
+                      >
+                        {{ assertion.value }}
+                      </p>
+                      <!-- <span class="tooltiptext">{{ assertion.value }}</span> -->
+                      <!-- </div> -->
+                      <!-- </p> -->
+                    </td>
+
+                    <td align="center">
+                      <!-- <div class="tooltip"> -->
+                      <p
+                        style="
+                          display: -webkit-box;
+                          -webkit-box-orient: vertical;
+                          -webkit-line-clamp: 4;
+                          overflow: hidden;
+                          width: 100%;
+                          height: auto;
+                        "
+                      >
+                        {{ assertion.actualValue }}
+                      </p>
+                      <!-- <span class="tooltiptext">{{
+                          assertion.actualValue
+                        }}</span> -->
+                      <!-- </div> -->
+                    </td>
+                    <td
+                      align="center"
+                      [ngStyle]="{
+                        color:
+                          assertion.status === 'Failed' ? '#EB5757' : '#219653'
+                      }"
+                    >
+                      {{ assertion.status }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- <div style="margin-bottom: 60px"></div> -->
+          </mat-tab>
+        </mat-tab-group>
+      </mat-tab>
+      <mat-tab label="RAW">No Content </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

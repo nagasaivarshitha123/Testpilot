@@ -1,0 +1,12 @@
+<div
+  [ngClass]="{ 'header-main': collapsed, 'header-margin': !collapsed }"
+  *ngIf="authService.isLoggedIn() | async as isLoggedIn"
+  [ngClass]="getHeaderClass()"
+>
+  <app-header></app-header>
+</div>
+<notifier-container></notifier-container>
+
+<div class="body" [ngClass]="getBodyClass()">
+  <router-outlet></router-outlet>
+</div>

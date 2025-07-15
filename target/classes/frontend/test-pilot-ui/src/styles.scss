@@ -1,0 +1,117 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "~angular-notifier/styles";
+@import "~jsoneditor/dist/jsoneditor.min.css";
+
+html,
+body {
+  height: 100%;
+  background: #e5e7e9;
+  font-family: "Montserrat", sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+  // zoom: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif !important;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  // scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px white;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(28, 36, 43, 0.09);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(28, 36, 43, 0.2);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+p,
+span {
+  font-family: "Inter", sans-serif;
+}
+
+@media (max-width: 1920px) {
+  body {
+    zoom: 100%;
+  }
+}
+
+@media (max-width: 1536px) {
+  body {
+    zoom: 100%;
+  }
+}
+
+@media (max-width: 1280px) {
+  body {
+    zoom: 85%;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    zoom: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+.p-tooltip-text {
+  font: 2em sans-serif;
+}
+
+.p-tooltip .p-tooltip-text {
+  background-color: aliceblue !important;
+  color: green !important;
+}
+
+.ui-tooltip-text.ui-shadow.ui-corner-all {
+  background-color: #ffffffda;
+  border-radius: 12px;
+  position: relative;
+  margin: 8px;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  backdrop-filter: blur(33px);
+  background-blend-mode: overlay;
+}

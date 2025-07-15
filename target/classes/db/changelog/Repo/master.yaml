@@ -1,0 +1,17 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: test-pilot
+
+  - include:
+      file: DDL/001_create_tables.sql
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: 2
+      author: test-pilot
+
+  - include:
+      file: DDL/002_modify_columns_assertions_tables.sql
+      relativeToChangelogFile: true

@@ -1,0 +1,77 @@
+::ng-deep.mat-dialog-container {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+::ng-deep.mat-dialog-content {
+  margin: 8px;
+  padding: 0px;
+}
+
+.header {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: #d9b036;
+  height: 20px;
+  padding: 5px;
+  padding-top: 20px;
+  padding-left: 20px;
+
+  h4 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 15px;
+    color: white;
+  }
+
+  button {
+    color: #ffffff;
+    position: relative;
+    top: -10px;
+  }
+}
+
+mat-dialog-content {
+  .mat_content_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+
+    span {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      width: 340px;
+    }
+
+    .buttons {
+      margin: 10px 0px 10px 0px;
+
+      button:nth-child(1) {
+        color: white;
+        background: #219653;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        margin: 10px;
+      }
+      button:nth-child(2) {
+        color: white;
+        background: #eb5757;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        margin: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.collapse-main {
+  position: fixed;
+  z-index: 999;
+  top: 23px;
+  left: 70px;
+  cursor: pointer;
+}
+
+.collapse-margin {
+  position: fixed;
+  z-index: 999;
+  top: 23px;
+  left: 15.8rem;
+  cursor: pointer;
+  transition: left 0.4s ease;
+}

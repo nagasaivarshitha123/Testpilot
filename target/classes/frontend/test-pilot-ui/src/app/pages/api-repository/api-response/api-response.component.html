@@ -1,0 +1,45 @@
+<div class="response_panel_container">
+  <p>Response</p>
+
+  <div class="info">
+    <div class="info_row">
+      <h4>Status:</h4>
+      <span>{{ metaData?.status }}</span>
+    </div>
+
+    <div class="info_row">
+      <h4>Time:</h4>
+      <span>{{ metaData?.time }}</span>
+    </div>
+
+    <div class="info_row">
+      <h4>Size:</h4>
+      <span>{{ metaData?.size }}</span>
+    </div>
+  </div>
+
+  <div class="tabs_container">
+    <mat-tab-group animationDuration="0ms" [(selectedIndex)]="selectedIndex">
+      <mat-tab label="XML">No Content</mat-tab>
+      <mat-tab label="HTML">No Content</mat-tab>
+      <mat-tab label="JSON">
+        <mat-tab-group
+          animationDuration="0ms"
+          mat-stretch-tabs
+          class="second_tabs"
+          [(selectedIndex)]="selectedChildIndex"
+        >
+          <mat-tab label="HEADERS">
+            <pre *ngIf="jsonHeadersData !== null">{{
+              jsonHeadersData | json : 4
+            }}</pre>
+          </mat-tab>
+          <mat-tab label="BODY">
+            <pre *ngIf="jsonData !== null">{{ jsonData | json : 4 }}</pre>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-tab>
+      <mat-tab label="RAW">No Content </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

@@ -1,0 +1,237 @@
+.report__container {
+  background: #e5e7e9;
+  height: 100vh;
+
+  // .report__card ::-webkit-scrollbar {
+  //   display: none;
+  // }
+
+  .report__card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 1px 2px 13px -1px rgba(0, 0, 0, 0.42);
+    -webkit-box-shadow: 1px 2px 13px -1px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: 1px 2px 13px -1px rgba(0, 0, 0, 0.42);
+    height: 100vh;
+    overflow: hidden;
+
+    .search_container {
+      display: flex;
+      width: inherit;
+      flex: 1;
+      background-color: #ffffff;
+      border-bottom: 1px solid lightgrey;
+      padding: 10px;
+      align-items: center;
+      justify-content: flex-end;
+
+      .input_container {
+        display: flex;
+        border: 1px solid #bdbdbd;
+        border-radius: 4px;
+        align-items: center;
+        height: 30px;
+
+        input {
+          outline: none;
+          border: none;
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 12px;
+          height: 25px !important;
+        }
+      }
+
+      button {
+        color: white;
+        height: 32px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600 !important;
+        font-size: 12px !important;
+        line-height: 15px;
+        background: linear-gradient(107.27deg, #333333 3.43%, #ffffff 251.34%);
+        margin-left: 20px;
+      }
+    }
+
+    .table_container {
+      background-color: rgb(255, 255, 255);
+      height: 80%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      flex: 1;
+    }
+
+    .testSuite_reports_noContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      margin: 10px 0px 10px 0px;
+      span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        // width: 300px;
+      }
+
+      img {
+        height: 300px;
+        width: 300px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .report__header {
+    width: inherit;
+    height: 40px;
+    background-color: #d9b036;
+    border-radius: 10px 10px 0px 0px;
+    position: relative;
+    top: -21px !important;
+
+    h4 {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600 !important;
+      font-size: 16px !important;
+      color: #ffffff;
+      text-transform: capitalize;
+      position: relative;
+      padding: 10px;
+    }
+  }
+
+  ::ng-deep .mat-progress-bar-fill::after {
+    background-color: #ff8a16 !important;
+  }
+
+  ::ng-deep .mat-progress-bar-buffer {
+    background-color: #d9b036;
+  }
+
+  .table_container {
+    table {
+      width: 100%;
+      // height: 80%;
+      overflow: scroll;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      border-bottom: none !important;
+      border-top: none !important;
+    }
+
+    th,
+    thead {
+      display: none !important;
+    }
+
+    .mat-header-row {
+      display: none;
+    }
+
+    :root {
+      --input-border: #8b8a8b;
+      --input-focus-h: 245;
+      --input-focus-s: 100%;
+      --input-focus-l: 42%;
+    }
+
+    td.mat-cell:first-of-type,
+    td.mat-footer-cell:first-of-type,
+    th.mat-header-cell:first-of-type {
+      color: white;
+      padding-left: 24px;
+      background: #d9b036;
+      margin: 10px;
+    }
+
+    td.mat-cell {
+      /* row padding */
+      padding: 16px 0;
+      /* row border */
+      border-bottom: 1px solid lightgrey;
+      border-top: 1px solid lightgrey;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    td.mat-cell:nth-child(1) {
+      width: 35%;
+    }
+
+    td.mat-cell:nth-child(2),
+    td.mat-cell:nth-child(3) {
+      /* row border */
+      //   border-right: 1px solid lightgrey;
+      position: relative;
+      width: 150px;
+    }
+
+    table {
+      /* row spacing / margin */
+      border-spacing: 0 8px !important;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    td:nth-child(1) {
+      P {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0 auto;
+        max-width: 130px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+
+    td.mat-cell:nth-child(2)::after,
+    td.mat-cell:nth-child(3)::after {
+      position: absolute;
+      top: 1em;
+      right: 0;
+      content: "";
+      width: 1px;
+      height: 50px;
+      border-bottom: 1px solid lightgray;
+    }
+
+    td.mat-cell:nth-child(2)::before,
+    td.mat-cell:nth-child(3)::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0.5em;
+      height: 5em;
+      width: 1px;
+      background: lightgray;
+    }
+  }
+
+  /deep/ .mat-paginator-icon {
+    width: 28px;
+    color: #bdbdbd !important;
+  }
+}

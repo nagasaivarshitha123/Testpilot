@@ -1,0 +1,221 @@
+::ng-deep.mat-dialog-container {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+::ng-deep.mat-dialog-content {
+  margin: 8px;
+  padding: 0px;
+}
+
+.mat-dialog-content::-webkit-scrollbar {
+  display: none;
+}
+
+.mat-dialog-actions {
+  display: none;
+}
+
+.header {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: #d9b036;
+  height: 20px;
+  padding: 5px;
+  padding-top: 20px;
+  padding-left: 20px;
+
+  h4 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 15px;
+    color: white;
+  }
+
+  button {
+    color: #ffffff;
+    position: relative;
+    top: -10px;
+  }
+}
+.mat-dialog-content {
+  .mat_add_repository {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    padding: 15px;
+
+    .repo__inputs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        color: #1c242b;
+        opacity: 0.8;
+        min-width: 25%;
+      }
+
+      input {
+        flex: 1;
+        height: 30px;
+        border: 1px solid #bdbdbd;
+        outline-color: #bdbdbd;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        border-radius: 4px;
+        padding-left: 8px;
+      }
+    }
+
+    mat-select {
+      border: 1px solid #bdbdbd;
+      border-radius: 4px;
+      padding: 8px;
+      margin: 0px 0px 8px 0px;
+      outline: none;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      flex: 1;
+      width: 96%;
+
+      mat-option {
+        display: none !important;
+      }
+    }
+
+    .repo__description {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      margin-top: 18px;
+
+      span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        color: #1c242b;
+        opacity: 0.8;
+        margin-bottom: 6px;
+      }
+
+      textarea {
+        width: 99%;
+        max-height: 400px;
+        min-height: 100px;
+        border: 1px solid #bdbdbd;
+        outline-color: #bdbdbd;
+        resize: vertical;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+    }
+
+    .auth__buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 30px;
+      margin-top: 10px;
+      position: relative;
+
+      button {
+        color: white;
+        background: linear-gradient(107.27deg, #333333 3.43%, #ffffff 251.34%);
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+      }
+    }
+
+    .assertions_comparison {
+      display: flex;
+      flex-direction: row;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 30px;
+      margin-top: 20px;
+
+      mat-select {
+        border: 1px solid #bdbdbd;
+        border-radius: 4px;
+        padding: 8px;
+        // margin: 0px 0px 15px 0px;
+        outline: none;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        flex: 1;
+        width: 96%;
+
+        mat-option {
+          display: none !important;
+        }
+      }
+
+      input {
+        flex: 0.95;
+        height: 30px !important;
+        border: 1px solid #bdbdbd;
+        outline-color: #bdbdbd;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        border-radius: 4px;
+      }
+    }
+
+    .assertions__path {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-left: 15px;
+      margin-right: 15px;
+
+      span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #1c242b;
+        opacity: 0.8;
+      }
+
+      input {
+        width: 100%;
+        height: 31px;
+        border: 1px solid #bdbdbd90;
+        outline-color: #bdbdbd;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        border-radius: 4px;
+      }
+    }
+  }
+}

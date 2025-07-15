@@ -1,0 +1,300 @@
+<div class="header">
+  <h4 mat-dialog-title>{{ runProps.data.name }}</h4>
+  <button mat-icon-button mat-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<mat-dialog-content>
+  <div class="mat_content_main">
+    <div class="bar_container">
+      <span class="left">{{ passedCount1 }} Passed</span>
+      <span class="right">{{ failedCount1 }} Failed</span>
+    </div>
+    <div class="linear_gradient">
+      <div
+        [ngStyle]="{ width: barWidth }"
+        style="background: #219653; height: 10px; border-radius: 5px"
+      ></div>
+    </div>
+
+    <div class="main_header">
+      <div>
+        <span
+          >Execution Date &nbsp;
+          <h4>{{ runProps.data.executionDate | date : "dd-MM-yyyy" }}</h4></span
+        >
+        <span
+          >No. of Test Cases &nbsp;
+          <h4>{{ runProps.data.totalTestCases }}</h4></span
+        >
+      </div>
+
+      <div>
+        <span
+          >Creation Date &nbsp;
+          <h4>{{ runProps.data.creationDate | date : "dd-MM-yyyy" }}</h4></span
+        >
+        <span
+          >Time &nbsp;
+          <h4>{{ runProps.data.time }}</h4></span
+        >
+      </div>
+    </div>
+
+    <h2>Test Cases</h2>
+
+    <div class="test_case_list_container">
+      <div class="list_header">Test Case</div>
+
+      <div class="list_body">
+        <table mat-table [dataSource]="dataSource">
+          <!-- Checkbox Column -->
+          <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>Run</th>
+            <td mat-cell *matCellDef="let row">
+              <mat-checkbox
+                (click)="
+                  [$event.stopPropagation(), filterTestCasesAssertions($event)]
+                "
+                (change)="$event ? selection.toggle(row) : null"
+                [aria-label]="checkboxLabel(row)"
+              >
+              </mat-checkbox>
+            </td>
+          </ng-container>
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>id</th>
+            <td
+              mat-cell
+              *matCellDef="let element; let i = index"
+              [ngStyle]="{
+                backgroundColor: i % 2 == 0 ? '#F6FBFF' : '#ffffff',
+                backgroundColor:
+                  i === line ? '#D9EEFF' : i % 2 == 0 ? '#F6FBFF' : '#ffffff',
+                color: i === line ? 'gray' : 'black'
+              }"
+              (click)="test(i, element)"
+            >
+              {{ i + 1 }}
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td
+              mat-cell
+              *matCellDef="let element; let i = index"
+              [ngStyle]="{
+                backgroundColor: i % 2 == 0 ? '#F6FBFF' : '#ffffff',
+                backgroundColor:
+                  i === line ? '#D9EEFF' : i % 2 == 0 ? '#F6FBFF' : '#ffffff',
+                color: i === line ? 'gray' : 'black'
+              }"
+              style="max-width: 100px"
+              (click)="test(i, element)"
+            >
+              <p
+                style="
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 1;
+                  overflow: hidden;
+                  text-align: left;
+                "
+              >
+                {{ element.testCaseName }}
+              </p>
+            </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td
+              mat-cell
+              *matCellDef="let element; let i = index"
+              [ngStyle]="{
+                backgroundColor: i % 2 == 0 ? '#F6FBFF' : '#ffffff',
+                backgroundColor:
+                  i === line ? '#D9EEFF' : i % 2 == 0 ? '#F6FBFF' : '#ffffff',
+                color: i === line ? 'gray' : 'black'
+              }"
+              style="max-width: 100px"
+              (click)="test(i, element)"
+            >
+              <p
+                style="
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 1;
+                  overflow: hidden;
+                  text-align: left;
+                "
+              >
+                {{ element.testCaseDescription }}
+              </p>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td
+              mat-cell
+              *matCellDef="let element; let i = index"
+              [ngStyle]="{
+                color: element.status === 'Failed' ? '#EB5757' : '#219653',
+                backgroundColor: i % 2 == 0 ? '#F6FBFF' : '#ffffff',
+                backgroundColor:
+                  i === line ? '#D9EEFF' : i % 2 == 0 ? '#F6FBFF' : '#ffffff',
+                color: i === line ? 'gray' : 'black'
+              }"
+              (click)="test(i, element)"
+            >
+              <p
+                [ngStyle]="{
+                  color: element.status === 'Failed' ? '#EB5757' : '#219653'
+                }"
+              >
+                {{ element.status }}
+              </p>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+            (click)="selection.toggle(row)"
+          ></tr>
+        </table>
+      </div>
+    </div>
+
+    <div style="height: 30px"></div>
+
+    <div class="test_case_list_container">
+      <div class="list_header">{{ assertions.testCaseName }}</div>
+
+      <mat-tab-group animationDuration="0ms">
+        <mat-tab label="BODY">
+          <pre>{{ assertionsBody | json : 4 }}</pre>
+        </mat-tab>
+        <mat-tab label="ASSERTIONS">
+          <div class="bar_container">
+            <span class="left">{{ passedCount }} Passed</span>
+            <span class="right">{{ failedCount }} Failed</span>
+          </div>
+          <div class="linear_gradient">
+            <div
+              [ngStyle]="{ width: bar(assertions) }"
+              style="background: #219653; height: 10px; border-radius: 5px"
+            ></div>
+          </div>
+
+          <table>
+            <thead>
+              <th>Sl.No.</th>
+              <th>Type</th>
+              <th>Path</th>
+              <th>Comparison</th>
+              <th>Actual</th>
+              <th>Expected</th>
+              <th>Status</th>
+            </thead>
+
+            <tbody>
+              <tr
+                *ngFor="
+                  let singleAssertion of assertions.responseAssertions;
+                  let i = index
+                "
+                [ngStyle]="{
+                  backgroundColor: i % 2 == 0 ? '#F6FBFF' : '#ffffff'
+                }"
+              >
+                <td align="center">{{ i + 1 }}.</td>
+                <td align="center">{{ singleAssertion.assertionType }}</td>
+                <td
+                  align="center"
+                  pTooltip="{{ singleAssertion.path }}"
+                  showDelay="600"
+                >
+                  <p
+                    style="
+                      display: -webkit-box;
+                      -webkit-box-orient: vertical;
+                      -webkit-line-clamp: 2;
+                      overflow: hidden;
+                      width: 100%;
+                      height: auto;
+                      line-height: 24px;
+                      cursor: pointer;
+                    "
+                  >
+                    {{ singleAssertion.path }}
+                  </p>
+                </td>
+                <td align="center">{{ singleAssertion.comparison }}</td>
+                <td
+                  align="center"
+                  pTooltip="{{ singleAssertion.actualValue }}"
+                  showDelay="600"
+                >
+                  <p
+                    style="
+                      display: -webkit-box;
+                      -webkit-box-orient: vertical;
+                      -webkit-line-clamp: 2;
+                      overflow: hidden;
+                      width: 100%;
+                      height: auto;
+                      line-height: 19px;
+                      cursor: pointer;
+                    "
+                  >
+                    {{ singleAssertion.actualValue }}
+                  </p>
+                </td>
+                <td
+                  align="center"
+                  pTooltip="{{ singleAssertion.value }}"
+                  showDelay="600"
+                >
+                  <p
+                    style="
+                      display: -webkit-box;
+                      -webkit-box-orient: vertical;
+                      -webkit-line-clamp: 2;
+                      overflow: hidden;
+                      width: 100%;
+                      height: auto;
+                      line-height: 19px;
+                      cursor: pointer;
+                    "
+                  >
+                    {{ singleAssertion.value }}
+                  </p>
+                </td>
+                <td
+                  align="center"
+                  [ngStyle]="{
+                    color:
+                      singleAssertion.status === 'Failed'
+                        ? '#EB5757'
+                        : '#219653'
+                  }"
+                >
+                  {{ singleAssertion.status }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</mat-dialog-content>

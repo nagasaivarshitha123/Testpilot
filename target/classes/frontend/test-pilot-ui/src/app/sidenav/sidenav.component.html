@@ -1,0 +1,464 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()">
+      <img src="assets/footer-logo.png" *ngIf="collapsed" />
+      <img src="assets/image.png" *ngIf="!collapsed" />
+      <!-- <div style="flex: 1"></div> -->
+      <!-- <div class="collapsed-open">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          *ngIf="collapsed"
+        >
+          <path
+            d="M7.5905 9.67875C7.49683 9.77008 7.45 9.87658 7.45 9.99825C7.45 10.1199 7.49683 10.2276 7.5905 10.3212L10.0372 12.768C10.1829 12.9137 10.3477 12.9495 10.5317 12.8755C10.7157 12.8015 10.8077 12.6609 10.8077 12.4538V7.54175C10.8077 7.33708 10.7157 7.19783 10.5317 7.124C10.3477 7.05033 10.1829 7.08633 10.0372 7.232L7.5905 9.67875ZM0.5 10.0017C0.5 8.68775 0.749332 7.45267 1.248 6.2965C1.74667 5.14033 2.42342 4.13467 3.27825 3.2795C4.13308 2.42433 5.13833 1.74725 6.294 1.24825C7.44967 0.749417 8.68442 0.5 9.99825 0.5C11.3123 0.5 12.5473 0.749333 13.7035 1.248C14.8597 1.74667 15.8653 2.42342 16.7205 3.27825C17.5757 4.13308 18.2528 5.13833 18.7518 6.294C19.2506 7.44967 19.5 8.68442 19.5 9.99825C19.5 11.3123 19.2507 12.5473 18.752 13.7035C18.2533 14.8597 17.5766 15.8653 16.7217 16.7205C15.8669 17.5757 14.8617 18.2528 13.706 18.7518C12.5503 19.2506 11.3156 19.5 10.0017 19.5C8.68775 19.5 7.45267 19.2507 6.2965 18.752C5.14033 18.2533 4.13467 17.5766 3.2795 16.7218C2.42433 15.8669 1.74725 14.8617 1.24825 13.706C0.749416 12.5503 0.5 11.3156 0.5 10.0017Z"
+            fill="#FBC534"
+          />
+        </svg>
+      </div> -->
+      <!-- <div class="collapsed-open">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          *ngIf="!collapsed"
+        >
+          <path
+            d="M12.4095 10.3212C12.5032 10.2299 12.55 10.1234 12.55 10.0017C12.55 9.88008 12.5032 9.77242 12.4095 9.67875L9.96275 7.232C9.81708 7.08633 9.65225 7.0505 9.46825 7.1245C9.28425 7.1985 9.19225 7.33908 9.19225 7.54625V12.4582C9.19225 12.6629 9.28425 12.8022 9.46825 12.876C9.65225 12.9497 9.81708 12.9137 9.96275 12.768L12.4095 10.3212ZM19.5 9.99825C19.5 11.3123 19.2507 12.5473 18.752 13.7035C18.2533 14.8597 17.5766 15.8653 16.7218 16.7205C15.8669 17.5757 14.8617 18.2528 13.706 18.7518C12.5503 19.2506 11.3156 19.5 10.0017 19.5C8.68775 19.5 7.45267 19.2507 6.2965 18.752C5.14033 18.2533 4.13467 17.5766 3.2795 16.7217C2.42433 15.8669 1.74725 14.8617 1.24825 13.706C0.749417 12.5503 0.5 11.3156 0.5 10.0017C0.5 8.68775 0.749333 7.45267 1.248 6.2965C1.74667 5.14033 2.42342 4.13467 3.27825 3.2795C4.13308 2.42433 5.13833 1.74725 6.294 1.24825C7.44967 0.749416 8.68442 0.5 9.99825 0.5C11.3123 0.5 12.5473 0.749332 13.7035 1.248C14.8597 1.74667 15.8653 2.42342 16.7205 3.27825C17.5757 4.13308 18.2528 5.13833 18.7518 6.294C19.2506 7.44967 19.5 8.68442 19.5 9.99825Z"
+            fill="#FBC534"
+          />
+        </svg>
+      </div> -->
+    </button>
+    <!-- <button class="btn-close" (click)="closeSidenav()" *ngIf="collapsed">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.5905 9.67875C7.49683 9.77008 7.45 9.87658 7.45 9.99825C7.45 10.1199 7.49683 10.2276 7.5905 10.3212L10.0372 12.768C10.1829 12.9137 10.3477 12.9495 10.5317 12.8755C10.7157 12.8015 10.8077 12.6609 10.8077 12.4538V7.54175C10.8077 7.33708 10.7157 7.19783 10.5317 7.124C10.3477 7.05033 10.1829 7.08633 10.0372 7.232L7.5905 9.67875ZM0.5 10.0017C0.5 8.68775 0.749332 7.45267 1.248 6.2965C1.74667 5.14033 2.42342 4.13467 3.27825 3.2795C4.13308 2.42433 5.13833 1.74725 6.294 1.24825C7.44967 0.749417 8.68442 0.5 9.99825 0.5C11.3123 0.5 12.5473 0.749333 13.7035 1.248C14.8597 1.74667 15.8653 2.42342 16.7205 3.27825C17.5757 4.13308 18.2528 5.13833 18.7518 6.294C19.2506 7.44967 19.5 8.68442 19.5 9.99825C19.5 11.3123 19.2507 12.5473 18.752 13.7035C18.2533 14.8597 17.5766 15.8653 16.7217 16.7205C15.8669 17.5757 14.8617 18.2528 13.706 18.7518C12.5503 19.2506 11.3156 19.5 10.0017 19.5C8.68775 19.5 7.45267 19.2507 6.2965 18.752C5.14033 18.2533 4.13467 17.5766 3.2795 16.7218C2.42433 15.8669 1.74725 14.8617 1.24825 13.706C0.749416 12.5503 0.5 11.3156 0.5 10.0017Z"
+          fill="#FBC534"
+        />
+      </svg>
+    </button> -->
+  </div>
+
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item">
+      <div class="search-main">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13.2711 12.6971L10.8787 10.3241C11.8074 9.16616 12.2571 7.69647 12.1354 6.21718C12.0137 4.73789 11.3299 3.36144 10.2245 2.37086C9.11915 1.38028 7.67626 0.850856 6.19253 0.891456C4.7088 0.932056 3.29701 1.53959 2.24746 2.58914C1.19792 3.63869 0.590381 5.05047 0.549781 6.5342C0.509181 8.01793 1.0386 9.46083 2.02918 10.5662C3.01977 11.6716 4.39622 12.3554 5.8755 12.4771C7.35479 12.5988 8.82448 12.149 9.98238 11.2204L12.3554 13.5935C12.4154 13.6539 12.4867 13.7019 12.5653 13.7346C12.6439 13.7673 12.7281 13.7842 12.8133 13.7842C12.8984 13.7842 12.9827 13.7673 13.0613 13.7346C13.1399 13.7019 13.2112 13.6539 13.2711 13.5935C13.3873 13.4732 13.4523 13.3125 13.4523 13.1453C13.4523 12.978 13.3873 12.8174 13.2711 12.6971ZM6.36475 11.2204C5.47198 11.2204 4.59925 10.9557 3.85693 10.4597C3.11461 9.96365 2.53605 9.25867 2.19439 8.43385C1.85274 7.60903 1.76335 6.70142 1.93752 5.8258C2.1117 4.95018 2.54161 4.14586 3.1729 3.51457C3.80419 2.88328 4.6085 2.45337 5.48412 2.2792C6.35975 2.10503 7.26735 2.19442 8.09217 2.53607C8.91699 2.87772 9.62198 3.45629 10.118 4.1986C10.614 4.94092 10.8787 5.81365 10.8787 6.70643C10.8787 7.90361 10.4031 9.05175 9.55661 9.89828C8.71008 10.7448 7.56193 11.2204 6.36475 11.2204Z"
+            fill="#9899A6"
+          />
+        </svg>
+
+        <input
+          placeholder="Search Repository"
+          type="text"
+          [(ngModel)]="search"
+          name="search"
+          (keyup)="searchRepo($event)"
+          class="search-input"
+          *ngIf="collapsed"
+        />
+      </div>
+      <a class="sidenav-nav-link glow-on-hover" (click)="openDialog()">
+        <i
+          class="fa-solid fa-plus sidenav-link-icon"
+          style="color: #111214"
+        ></i>
+
+        <span class="sidenav-link-text" style="color: #111214" *ngIf="collapsed"
+          >Add New Repository &nbsp; &nbsp; &nbsp; &nbsp;</span
+        >
+      </a>
+    </li>
+
+    <li class="sidenav-nav-item" *ngFor="let data of navData">
+      <a
+        class="sidenav-nav-link"
+        [routerLink]="[data.routerlink]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="handleClick(data, (isCapture = false))"
+      >
+        <i
+          class="sidenav-link-icon"
+          [class]="data.icon"
+          style="padding: 10px"
+        ></i>
+
+        <span class="sidenav-link-text" *ngIf="collapsed">{{
+          data.label
+        }}</span>
+
+        <i
+          *ngIf="data.items && collapsed"
+          class="menu-collapse-icon"
+          [ngClass]="
+            !data.expanded
+              ? 'fa-solid fa-chevron-right'
+              : 'fa-solid fa-chevron-down'
+          "
+        ></i>
+      </a>
+
+      <ul
+        *ngIf="collapsed && !data.level"
+        [@submenu]="
+          data.expanded
+            ? {
+                value: 'visible',
+                params: {
+                  transitionParams: '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                  height: '*'
+                }
+              }
+            : {
+                value: 'hidden',
+                params: {
+                  transitionParams: '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                  height: '0'
+                }
+              }
+        "
+        class="sublevel-nav"
+        style="padding-left: 10px"
+      >
+        <li
+          *ngFor="let item of data.items; let i = index"
+          class="sublevel-nav-item"
+          style="padding-left: 30px"
+        >
+          <a
+            [routerLink]="[item.routerlink]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="sublevel-nav-link"
+            (click)="handleClick(item, (isCapture = false))"
+          >
+            <i
+              class="sidenav-link-icon"
+              [class]="item.icon"
+              style="padding: 10px"
+            ></i>
+            <span class="sublevel-link-text">
+              {{ item.label }}
+            </span>
+          </a>
+        </li>
+      </ul>
+      <!-- sublevel -->
+
+      <ul
+        [@submenu]="
+          data.expanded
+            ? {
+                value: 'visible',
+                params: {
+                  transitionParams: '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                  height: '*'
+                }
+              }
+            : {
+                value: 'hidden',
+                params: {
+                  transitionParams: '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                  height: '0'
+                }
+              }
+        "
+        *ngIf="collapsed && data.items && data.level && data?.items.length > 0"
+        class="sublevel-nav"
+      >
+        <li class="sublevel-nav-item">
+          <div class="sublevel-nav-link" (click)="restExpansionHandler()">
+            <span
+              class="sublevel-link-text"
+              style="margin-left: 15px"
+              [ngClass]="repoType === 'REST' && 'activatedTab'"
+              >REST</span
+            >
+
+            <i
+              class="sublevel-link-icon"
+              [ngClass]="
+                !restExpansion
+                  ? 'fa-solid fa-chevron-right'
+                  : 'fa-solid fa-chevron-down'
+              "
+            ></i>
+          </div>
+          <ul
+            [@submenu]="
+              restExpansion
+                ? {
+                    value: 'visible',
+                    params: {
+                      transitionParams: '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                      height: '*'
+                    }
+                  }
+                : {
+                    value: 'hidden',
+                    params: {
+                      transitionParams: '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                      height: '0'
+                    }
+                  }
+            "
+          >
+            <li
+              *ngFor="let item of data.items[0].rest; let i = index"
+              class="sublevel-nav-item"
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  position: relative;
+                  left: -40px;
+                "
+              >
+                <!-- <button mat-icon-button (click)="addNewRequest(item)">
+                  <i
+                    class="fa-solid fa-plus"
+                    style="color: #cdcdcd; font-size: 10px !important"
+                  ></i>
+                </button> -->
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                  <i
+                    class="fa-solid fa-ellipsis"
+                    style="color: #cdcdcd; font-size: 12px !important"
+                  ></i>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="editNewRequest(item)">
+                    <i
+                      class="fa-solid fa-pen"
+                      style="color: #cdcdcd; font-size: 10px !important"
+                    ></i>
+                    &nbsp;Edit Repository
+                  </button>
+                  <button mat-menu-item (click)="deleteRepository(item)">
+                    <i
+                      class="fa-sharp fa-solid fa-trash"
+                      style="color: #cdcdcd; font-size: 10px !important"
+                    ></i>
+                    &nbsp;Delete Repository
+                  </button>
+                  <button mat-menu-item (click)="addNewRequest(item)">
+                    <i
+                      class="fa-solid fa-plus"
+                      style="color: #cdcdcd; font-size: 10px !important"
+                    ></i>
+                    &nbsp;Add New Request
+                  </button>
+                </mat-menu>
+                <a
+                  class="sublevel-nav-link"
+                  (click)="handleClick(item, (isCapture = true))"
+                >
+                  <span
+                    class="sublevel-link-text"
+                    [ngClass]="repoName === item.name && 'activatedTab'"
+                    pTooltip="{{ item.name }}"
+                    showDelay="1000"
+                    style="width: 108px !important"
+                  >
+                    {{ item.name }}
+                  </span>
+                  <i
+                    class="sublevel-link-icon"
+                    [ngClass]="
+                      !item.expanded
+                        ? 'fa-solid fa-chevron-right'
+                        : 'fa-solid fa-chevron-down'
+                    "
+                  ></i>
+                </a>
+              </div>
+              <ul
+                [@submenu]="
+                  item.expanded
+                    ? {
+                        value: 'visible',
+                        params: {
+                          transitionParams:
+                            '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                          height: '*'
+                        }
+                      }
+                    : {
+                        value: 'hidden',
+                        params: {
+                          transitionParams:
+                            '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                          height: '0'
+                        }
+                      }
+                "
+                style="align-items: center; position: relative; left: -25px"
+              >
+                <li
+                  *ngFor="let request of item.requests; let i = index"
+                  class="sublevel-nav-item"
+                  style="display: flex"
+                >
+                  <div
+                    class="sublevel-nav-link"
+                    (click)="getRequests(request, item)"
+                  >
+                    <span
+                      class="sublevel-link-text"
+                      [ngClass]="
+                        repoName === item.name &&
+                        repoUId === request.id &&
+                        'activatedTab'
+                      "
+                      pTooltip="{{ request.name }}"
+                      showDelay="600"
+                      style="width: 90px !important"
+                    >
+                      {{ request.name }}
+                    </span>
+                  </div>
+                  <!-- <button
+                    mat-icon-button
+                    (click)="editNewRequest(request, item)"
+                    class="button-delete"
+                  >
+                    <i
+                      class="fa-solid fa-pen"
+                      style="color: #415464; font-size: 10px !important"
+                    ></i>
+                  </button> -->
+
+                  <button
+                    mat-icon-button
+                    (click)="deleteRequest(request.id)"
+                    class="button-delete"
+                  >
+                    <i
+                      class="fa-sharp fa-solid fa-trash"
+                      style="color: #415464; font-size: 10px !important"
+                    ></i>
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sublevel-nav-item">
+          <div class="sublevel-nav-link" (click)="soapExpansionHandler()">
+            <span
+              class="sublevel-link-text"
+              style="margin-left: 15px"
+              [ngStyle]="{ color: repoType === 'SOAP' ? 'white' : '#BDBDBD' }"
+              >SOAP</span
+            >
+
+            <i
+              class="sublevel-link-icon"
+              [ngClass]="
+                !restExpansion
+                  ? 'fa-solid fa-chevron-right'
+                  : 'fa-solid fa-chevron-down'
+              "
+            ></i>
+          </div>
+          <ul
+            [@submenu]="
+              soapExpansion
+                ? {
+                    value: 'visible',
+                    params: {
+                      transitionParams: '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                      height: '*'
+                    }
+                  }
+                : {
+                    value: 'hidden',
+                    params: {
+                      transitionParams: '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                      height: '0'
+                    }
+                  }
+            "
+          >
+            <li
+              *ngFor="let item of data.items[0].soap; let i = index"
+              class="sublevel-nav-item"
+            >
+              <div
+                class="sublevel-nav-link"
+                (click)="handleClick(item, (isCapture = false))"
+              >
+                <span class="sublevel-link-text">
+                  {{ item.name }}
+                </span>
+                <i
+                  class="sublevel-link-icon"
+                  [ngClass]="
+                    !item.expanded
+                      ? 'fa-solid fa-chevron-right'
+                      : 'fa-solid fa-chevron-down'
+                  "
+                ></i>
+              </div>
+              <ul
+                [@submenu]="
+                  item.expanded
+                    ? {
+                        value: 'visible',
+                        params: {
+                          transitionParams:
+                            '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                          height: '*'
+                        }
+                      }
+                    : {
+                        value: 'hidden',
+                        params: {
+                          transitionParams:
+                            '400ms cubic-bezier(0.86, 0, 0.07, 1)',
+                          height: '0'
+                        }
+                      }
+                "
+              >
+                <li
+                  *ngFor="let item of item.requests; let i = index"
+                  class="sublevel-nav-item"
+                >
+                  <div class="sublevel-nav-link">
+                    <span class="sublevel-link-text">
+                      {{ item.name }}
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
