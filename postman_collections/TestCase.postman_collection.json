@@ -1,0 +1,541 @@
+{
+	"info": {
+		"_postman_id": "5e4f032e-79ce-436b-a7e5-347e5330ea1a",
+		"name": "TestCase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46154810",
+		"_collection_link": "https://saivarshitha-8674825.postman.co/workspace/e2e0a8ee-06ba-49c5-8374-7c926f7727b3/collection/46154810-5e4f032e-79ce-436b-a7e5-347e5330ea1a?action=share&source=collection_link&creator=46154810"
+	},
+	"item": [
+		{
+			"name": "Create Testcase",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"web development project\",\r\n \"description\": \"development application\",\r\n \"projectId\":34,\r\n \"requestId\":66\r\n\r\n \r\n}\r\n \r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/testcase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update and run TestCase",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Login Test Case\",\r\n  \"description\": \"This test verifies login endpoint with valid credentials.\",\r\n  \"endpointUrl\": \"https://api.example.com/login\",\r\n  \"method\": \"POST\"\r\n}\r\n\r\n \r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/testcase/1/run",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase",
+						"1",
+						"run"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get TestCase",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\r\n \r\n\r\n\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/testcase/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Testcase",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Machine learning domain\",\r\n    \"description\":\"this is ML project\"\r\n}\r\n\r\n \r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/testcase/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searching",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcase?projectId=34&searchText=lo&pageNo=1&pageSize=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "34"
+						},
+						{
+							"key": "searchText",
+							"value": "lo"
+						},
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "1"
+						},
+						{
+							"key": "sortBy",
+							"value": "name",
+							"disabled": true
+						},
+						{
+							"key": "fetchAll",
+							"value": "false\n",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete TestCase",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcase/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sortParams",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcase/sortParams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase",
+						"sortParams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report with projectId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcase/report?projectId=34&searchText=login&repositoryType=REST&status=passed&pageNo=1&pageSize=1\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase",
+						"report"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "34"
+						},
+						{
+							"key": "searchText",
+							"value": "login"
+						},
+						{
+							"key": "startDate",
+							"value": "2025-01-01",
+							"disabled": true
+						},
+						{
+							"key": "endDate",
+							"value": "2025-07-14",
+							"disabled": true
+						},
+						{
+							"key": "repositoryType",
+							"value": "REST"
+						},
+						{
+							"key": "status",
+							"value": "passed"
+						},
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "1\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report with TestCaseId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcase/report/1/details?testCaseId=1&searchText=login&repositoryType=REST&status=passed&pageNo=1&pageSize=1\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase",
+						"report",
+						"1",
+						"details"
+					],
+					"query": [
+						{
+							"key": "testCaseId",
+							"value": "1"
+						},
+						{
+							"key": "searchText",
+							"value": "login"
+						},
+						{
+							"key": "repositoryType",
+							"value": "REST"
+						},
+						{
+							"key": "status",
+							"value": "passed"
+						},
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "1\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorization",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Header",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Authorization\": \"Bearer xyqqwert122345\",\r\n  \"Content-Type\": \"application/json\",\r\n  \"X-Custom-Header\": \"This Is\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/testcase/1/headers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase",
+						"1",
+						"headers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Body",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Cyber Security project\",\r\n \"description\": \"predict application\"\r\n\r\n \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/testcase/1/body",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcase",
+						"1",
+						"body"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asserations",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

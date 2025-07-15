@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "a90555e0-60d9-4e47-ac94-33f7364610cf",
+		"name": "Repositories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46154810",
+		"_collection_link": "https://saivarshitha-8674825.postman.co/workspace/e2e0a8ee-06ba-49c5-8374-7c926f7727b3/collection/46154810-a90555e0-60d9-4e47-ac94-33f7364610cf?action=share&source=collection_link&creator=46154810"
+	},
+	"item": [
+		{
+			"name": "create repo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update Repo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"checking system\",\r\n    \"description\":\"this is a security mangaement system\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/repository/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"repository",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo by id with path variable",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/repository/30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"repository",
+						"30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repo by id with param",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/repository?projectId=30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"repository"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Repo by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/repository/30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"repository",
+						"30"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "16d2f68e-d6a3-45fb-a6bb-d5d92c3bff7c",
+		"name": "Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46154810",
+		"_collection_link": "https://saivarshitha-8674825.postman.co/workspace/e2e0a8ee-06ba-49c5-8374-7c926f7727b3/collection/46154810-16d2f68e-d6a3-45fb-a6bb-d5d92c3bff7c?action=share&source=collection_link&creator=46154810"
+	},
+	"item": [
+		{
+			"name": "Create Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"repositoryId\":23 ,\r\n  \"name\": \"New project\",\r\n  \"method\": \"POST\",\r\n  \"url\": \"https://api.example.com/users/9999\",\r\n  \"projectId\": 34,\r\n  \"description\": \"This endpoint retrieves details for a specific user by ID.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"name\": \"New project\",\r\n\"description\": \"This endpoint retrieves details for a specific user by ID.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/63",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"63"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/63",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"63"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request with id in path",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"repositoryId\":23 ,\r\n  \"name\": \"New project\",\r\n  \"method\": \"POST\",\r\n  \"url\": \"https://api.example.com/users/9999\",\r\n  \"projectId\": 34,\r\n  \"description\": \"This endpoint retrieves details for a specific user by ID.\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/63",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"63"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request with projectId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/request?projectId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Run Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"endpointUrl\":\"https://jsonplaceholder.typicode.com/users/1\", //example url for retrive data\r\n\r\n  \"method\": \"GET\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/63/run",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"63",
+						"run"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorization",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"type\": \"Basic\",\r\n//   \"userName\": \"saikumar.siripurapu\",\r\n//   \"password\":\"sai123\"\r\n  \r\n// }\r\n// /*\r\n{\r\n  \"type\": \"Bearer Token\",\r\n  \"token\": \"your_token_here\"\r\n}\r\n// {\r\n//     \"type\":\"No Auth\"\r\n// }\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/62/authorization",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"62",
+						"authorization"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Header",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Authorization\": \"Bearer abc123xyz456\",\r\n  \"Content-Type\": \"application/json\",\r\n  \"X-Custom-Header\": \"MyValue\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/66/headers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"66",
+						"headers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Body",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjU2MTk5OCwiaWF0IjoxNzUyNDc1NTk4fQ.EV1UyyFQWuuzLZD9aU45Y_r-sPq7R-06FS3qu7isD5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"web development project\",\r\n \"description\": \"predict application\"\r\n\r\n \r\n}\r\n \r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/64/body",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"64",
+						"body"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

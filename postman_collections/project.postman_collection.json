@@ -1,0 +1,683 @@
+{
+	"info": {
+		"_postman_id": "6514aa43-e6f6-4f1b-a391-1a5736b0b5d1",
+		"name": "project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46154810",
+		"_collection_link": "https://saivarshitha-8674825.postman.co/workspace/e2e0a8ee-06ba-49c5-8374-7c926f7727b3/collection/46154810-6514aa43-e6f6-4f1b-a391-1a5736b0b5d1?action=share&source=collection_link&creator=46154810"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWdhc2FpLm1ldGh1a3VAaW5ub2NpdG8uY29tIiwiZXhwIjoxNzUxMTA5MzU5LCJpYXQiOjE3NTEwMjI5NTl9.JM3r-ADfYQYhsSFFBPVEzq3RzHlBXkKE4P_Wdwnuk-w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Test API Repo\",\r\n  \"description\": \"This repository contains test APIs.\",\r\n  \"projectId\": 1,\r\n  \"repositoryUrl\": \"https://github.com/example/test-api-repo\",\r\n  \"repositoryType\": \"REST\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/authentication/register-or-login?email=nagasai.methuku@innocito.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authentication",
+						"register-or-login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "nagasai.methuku@innocito.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login after verify",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"nagasai.methuku@innocito.com\",\r\n    \"otp\":\"812747\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/authentication/verify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authentication",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZWVydGhpLm11dHRoYUBpbm5vY2l0by5jb20iLCJleHAiOjE3NTE1MjcwNzIsImlhdCI6MTc1MTQ0MDY3Mn0.LgFks5S-gZELNMWI1ckAUM4lDtjivXXumXr_ZRKJROc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"sample project \",\r\n  \"description\": \"Test Description \",\r\n  \"projectType\":\"api service\"\r\n \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/projects/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"projects",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateproject",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWdhc2FpLm1ldGh1a3VAaW5ub2NpdG8uY29tIiwiZXhwIjoxNzUxNjEzOTI1LCJpYXQiOjE3NTE1Mjc1MjV9.W3sUOuCe23vcqJTHiknGMwliTwtQtB0V-9fJwK1JRPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " { \"name\": \"Sample  Project 5\",\r\n  \"description\": \" Description - 5\",\r\n  \"projectType\":\"api Automation tool\"\r\n }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/projects/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"projects",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete  project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZWVydGhpLm11dHRoYUBpbm5vY2l0by5jb20iLCJleHAiOjE3NTE1MjcwNzIsImlhdCI6MTc1MTQ0MDY3Mn0.LgFks5S-gZELNMWI1ckAUM4lDtjivXXumXr_ZRKJROc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/projects/21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"projects",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get project with id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWdhc2FpLm1ldGh1a3VAaW5ub2NpdG8uY29tIiwiZXhwIjoxNzUxNjEzOTI1LCJpYXQiOjE3NTE1Mjc1MjV9.W3sUOuCe23vcqJTHiknGMwliTwtQtB0V-9fJwK1JRPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/projects/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"projects",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All Projects",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWdhc2FpLm1ldGh1a3VAaW5ub2NpdG8uY29tIiwiZXhwIjoxNzUyMjk2NTQ3LCJpYXQiOjE3NTIyMTAxNDd9.Vtj9W8U3S85CL8ACVxJar6elvXgrfN5h8ruI1-XqEeY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get project with repo nd request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZWVydGhpLm11dHRoYUBpbm5vY2l0by5jb20iLCJleHAiOjE3NTI1NTY0NzgsImlhdCI6MTc1MjQ3MDA3OH0.qZYGswjCTCc_uQKIgITDj-R-OTr-R1oJa7fNtd97kmU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/projects/repo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"projects",
+						"repo",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get project through id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/projects/repo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"projects",
+								"repo",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 09:06:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request completed successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Website Redesign\",\n        \"description\": \"Redesigning the corporate website for better UX.\",\n        \"projectType\": \"Design\",\n        \"apiRepositories\": [\n            {\n                \"activeStatus\": 1,\n                \"createdBy\": \"1\",\n                \"updatedBy\": null,\n                \"id\": 12,\n                \"name\": \"Test API Repository of 3\",\n                \"description\": \"This repository contains test APIs. of 3\",\n                \"projectId\": 1,\n                \"repositoryUrl\": \"https://github.com/example/test-api-repo/3\",\n                \"repositoryType\": \"REST\",\n                \"requests\": [\n                    {\n                        \"activeStatus\": 1,\n                        \"createdBy\": \"1\",\n                        \"updatedBy\": null,\n                        \"id\": 3,\n                        \"name\": \"Request 1\",\n                        \"description\": \"This repository contains test APIs. of 3\",\n                        \"projectId\": 1,\n                        \"repositoryId\": null,\n                        \"endpointUrl\": \"https://github.com/example/test-api-repo/3\",\n                        \"method\": \"GET\",\n                        \"authorization\": null,\n                        \"headers\": null,\n                        \"body\": null,\n                        \"createdAt\": \"2025-07-02T13:18:58.540+00:00\",\n                        \"updatedAt\": null\n                    }\n                ],\n                \"createdAt\": \"2025-07-02T13:18:58.536+00:00\",\n                \"updatedAt\": null\n            },\n            {\n                \"activeStatus\": 1,\n                \"createdBy\": \"101\",\n                \"updatedBy\": \"101\",\n                \"id\": 6,\n                \"name\": \"User Service API\",\n                \"description\": \"Handles user registration, login, and profile.\",\n                \"projectId\": 1,\n                \"repositoryUrl\": \"https://github.com/example/user-service\",\n                \"repositoryType\": \"REST\",\n                \"requests\": [],\n                \"createdAt\": \"2025-06-01T05:30:00.000+00:00\",\n                \"updatedAt\": \"2025-06-01T05:30:00.000+00:00\"\n            },\n            {\n                \"activeStatus\": 1,\n                \"createdBy\": \"1\",\n                \"updatedBy\": \"1\",\n                \"id\": 1,\n                \"name\": \"Test API Repository\",\n                \"description\": \"This repository contains test APIs.\",\n                \"projectId\": 1,\n                \"repositoryUrl\": \"https://github.com/example/test-api-repo\",\n                \"repositoryType\": \"REST\",\n                \"requests\": [\n                    {\n                        \"activeStatus\": 1,\n                        \"createdBy\": \"2\",\n                        \"updatedBy\": null,\n                        \"id\": 4,\n                        \"name\": \"Get All Users\",\n                        \"description\": \"Fetches a list of all users from the system.\",\n                        \"projectId\": 1,\n                        \"repositoryId\": null,\n                        \"endpointUrl\": \"https://api.example.com/users\",\n                        \"method\": \"GET\",\n                        \"authorization\": null,\n                        \"headers\": null,\n                        \"body\": null,\n                        \"createdAt\": \"2025-07-03T04:48:05.852+00:00\",\n                        \"updatedAt\": null\n                    },\n                    {\n                        \"activeStatus\": 1,\n                        \"createdBy\": \"1\",\n                        \"updatedBy\": null,\n                        \"id\": 1,\n                        \"name\": \"Request 1\",\n                        \"description\": \"This repository contains test APIs.\",\n                        \"projectId\": 1,\n                        \"repositoryId\": null,\n                        \"endpointUrl\": \"https://github.com/example/test-api-repo\",\n                        \"method\": \"GET\",\n                        \"authorization\": null,\n                        \"headers\": null,\n                        \"body\": null,\n                        \"createdAt\": \"2025-06-27T11:32:50.277+00:00\",\n                        \"updatedAt\": null\n                    }\n                ],\n                \"createdAt\": \"2025-06-27T11:32:50.225+00:00\",\n                \"updatedAt\": \"2025-06-30T12:52:00.278+00:00\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get repo by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWdhc2FpLm1ldGh1a3VAaW5ub2NpdG8uY29tIiwiZXhwIjoxNzUxNjEzOTI1LCJpYXQiOjE3NTE1Mjc1MjV9.W3sUOuCe23vcqJTHiknGMwliTwtQtB0V-9fJwK1JRPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"repositoryId\": 1,\r\n  \"name\": \"Get All Users\",\r\n  \"method\": \"GET\",\r\n  \"url\": \"https://api.example.com/users\",\r\n  \"projectId\": 1,\r\n  \"description\": \"Fetches a list of all users from the system.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/repository/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"repository",
+						"11"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "repo updation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWlrdW1hci5zaXJpcHVyYXB1QGlubm9jaXRvLmNvbSIsImV4cCI6MTc1MjMyNDUwNiwiaWF0IjoxNzUyMjM4MTA2fQ.LRqsxFv4Wr8lkOJ3q76bwZ8VoWSr4a2s9OaJXJLOauE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"name\": \"job profiles\",\r\n    \"description\": \"searchig\",\r\n    \"projectId\": 45,\r\n    \"repositoryUrl\": \"https://github.com/example/retail-sales-predictor\",\r\n    \"repositoryType\": \"REST\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/repository",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"repository"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "repo fuctions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWdhc2FpLm1ldGh1a3VAaW5ub2NpdG8uY29tIiwiZXhwIjoxNzUxMzczNjM5LCJpYXQiOjE3NTEyODcyMzl9.fNQEMBY7tiMUqzy6xmHgSa8A0W9NrKk6zZ5a_rudNLg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/repository/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"repository",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request functions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZWVydGhpLm11dHRoYUBpbm5vY2l0by5jb20iLCJleHAiOjE3NTE2OTE3NDUsImlhdCI6MTc1MTYwNTM0NX0.6opQ2yJzqs8b2t53yU9S_v0kCjK8OF4BXfHaICTOB4U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"repositoryId\": 10,\r\n  \"name\": \"get User Details\",\r\n  \"method\": \"POSt\",\r\n  \"url\": \"https://api.example.com/users/9999\",\r\n  \"projectId\": 5,\r\n  \"description\": \"This endpoint retrieves details for a specific user by ID.\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search &pagination for repo and requests",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWdhc2FpLm1ldGh1a3VAaW5ub2NpdG8uY29tIiwiZXhwIjoxNzUyMDM2NjY4LCJpYXQiOjE3NTE5NTAyNjh9.wqFu7-WiOZB1I7Yt22iUsbA2TihtC1QCnZYhLr7sRmk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/projects/reposearch/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"projects",
+						"reposearch",
+						"2"
+					],
+					"query": [
+						{
+							"key": "searchText",
+							"value": "naga",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search projects",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWdhc2FpLm1ldGh1a3VAaW5ub2NpdG8uY29tIiwiZXhwIjoxNzUyMjk2NTQ3LCJpYXQiOjE3NTIyMTAxNDd9.Vtj9W8U3S85CL8ACVxJar6elvXgrfN5h8ruI1-XqEeY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/projects/search?searchText=web",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"projects",
+						"search"
+					],
+					"query": [
+						{
+							"key": "searchText",
+							"value": "web"
+						},
+						{
+							"key": "pageSize",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "pageNo",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "only repositories data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWdhc2FpLm1ldGh1a3VAaW5ub2NpdG8uY29tIiwiZXhwIjoxNzUyMjk2NTQ3LCJpYXQiOjE3NTIyMTAxNDd9.Vtj9W8U3S85CL8ACVxJar6elvXgrfN5h8ruI1-XqEeY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/repository",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"repository"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
