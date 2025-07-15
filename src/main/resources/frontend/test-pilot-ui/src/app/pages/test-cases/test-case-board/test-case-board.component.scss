@@ -1,0 +1,256 @@
+.test_request__container {
+  background-color: #e5e7e9;
+
+  .request__card {
+    background-color: #e5e7e9;
+    border-radius: 10px;
+    box-shadow: 1px 2px 13px -1px rgba(0, 0, 0, 0.42);
+    -webkit-box-shadow: 1px 2px 13px -1px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: 1px 2px 13px -1px rgba(0, 0, 0, 0.42);
+    height: 100vh;
+    // overflow-y: scroll;
+
+    .request__header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: inherit;
+      height: 40px;
+      background-color: #d9b036;
+      border-radius: 10px 10px 0px 0px;
+
+      h4 {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        color: #ffffff;
+        text-transform: lowercase;
+        position: relative;
+        padding: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 90%;
+      }
+
+      h4::first-letter {
+        text-transform: capitalize;
+      }
+    }
+
+    ::ng-deep .mat-progress-bar-fill::after {
+      background-color: #ff8a16 !important;
+    }
+
+    ::ng-deep .mat-progress-bar-buffer {
+      background-color: #d9b036;
+    }
+
+    .request__method {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      flex: 1;
+      border-bottom: 1px solid lightgrey;
+
+      .request__method_left,
+      .request__method_center,
+      .request__method_right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        h4 {
+          margin-right: 12px;
+          margin-left: 20px;
+          width: 49px;
+          height: 15px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 15px;
+          color: #1c242b;
+        }
+      }
+
+      .request__method_center {
+        flex: 1;
+        justify-content: center;
+
+        h4 {
+          width: inherit;
+          margin-left: 8px;
+        }
+
+        input,
+        textarea {
+          flex: 0.9;
+          border: none;
+          outline-color: #bdbdbd;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          height: 21px;
+          max-height: 100px;
+          min-height: 21px;
+        }
+      }
+
+      .request__method_left {
+        flex: 0.25;
+
+        .mat-form-field {
+          margin-top: 7.5px;
+        }
+      }
+      .request__method_right {
+        flex: 0.1;
+
+        .button1 {
+          color: white;
+          background-color: #048e8b;
+          height: 30px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 15px;
+        }
+
+        .button2 {
+          color: white;
+          height: 30px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 15px;
+          background: linear-gradient(
+            107.27deg,
+            #333333 3.43%,
+            #ffffff 251.34%
+          );
+        }
+      }
+    }
+
+    .panels {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      width: inherit;
+      height: 100% !important;
+      overflow: hidden;
+    }
+  }
+
+  ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: transparent !important;
+  }
+
+  ::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    margin-top: 4px;
+    color: rgb(0, 0, 0) !important;
+  }
+
+  ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: transparent !important;
+  }
+
+  ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: transparent !important;
+  }
+
+  ::ng-deep .mat-select-arrow {
+    color: #000000;
+  }
+
+  :root {
+    --input-border: #8b8a8b;
+    --input-focus-h: 0;
+    --input-focus-s: 0%;
+    --input-focus-l: 74%;
+  }
+
+  ::ng-deep .mat-progress-bar-fill::after {
+    background-color: #ff8a16 !important;
+  }
+
+  ::ng-deep .mat-progress-bar-buffer {
+    background-color: #d9b036;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 0px;
+    display: none !important;
+  }
+
+  ::ng-deep .no-line .mat-form-field-underline {
+    display: none !important;
+  }
+
+  // ::ng-deep mat-select {
+  //   border: 2px solid lightgray !important;
+  //   border-style: solid !important;
+  //   padding: 6px;
+  //   border-radius: 5px;
+  //   background-color: white;
+  //   font-family: "Inter", sans-serif;
+  //   font-style: normal;
+  //   font-weight: 400;
+  //   font-size: 12px;
+  // }
+
+  .mat-select {
+    border: 1px solid #bdbdbd;
+    padding: 7.5px;
+    border-radius: 4px;
+    background: white;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .input {
+    font-size: 16px;
+    font-size: Max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: #fff;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    transition: 180ms box-shadow ease-in-out;
+  }
+
+  .input {
+    border-color: hsl(
+      var(--input-focus-h),
+      var(--input-focus-s),
+      var(--input-focus-l)
+    );
+    box-shadow: 0 0 0 1.4px #bdbdbd;
+    outline: 1px solid transparent;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 0px;
+  }
+
+  .input:not(textarea) {
+    height: 2.25rem;
+  }
+
+  // textarea.input {
+  //   resize: none;
+  // }
+}

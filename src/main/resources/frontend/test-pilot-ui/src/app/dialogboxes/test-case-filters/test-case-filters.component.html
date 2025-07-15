@@ -1,0 +1,68 @@
+<div class="header">
+  <h4 mat-dialog-title>Filters</h4>
+  <button mat-icon-button mat-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<mat-dialog-content>
+  <div class="filters_container">
+    <div class="date__container">
+      <div class="label_containers">
+        <label style="margin-left: 20px">Start Date</label>
+        <div class="input_container" style="margin-left: 20px">
+          <input matInput [matDatepicker]="picker1" [formControl]="date" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker1"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </div>
+      </div>
+
+      <div class="label_containers" style="margin-left: -4px">
+        <label style="margin-left: 16px">End Date</label>
+        <div class="input_container">
+          <input
+            matInput
+            [matDatepicker]="picker2"
+            [formControl]="serializedDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker2"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </div>
+      </div>
+    </div>
+
+    <div class="label_containers">
+      <label>Type</label>
+      <mat-select [(ngModel)]="type">
+        <mat-option *ngFor="let type of apiType" [value]="type.viewValue">
+          {{ type.viewValue }}
+        </mat-option>
+      </mat-select>
+    </div>
+
+    <div class="label_containers">
+      <label>Status</label>
+      <mat-select [(ngModel)]="status">
+        <mat-option
+          *ngFor="let status of statusType"
+          [value]="status.viewValue"
+        >
+          {{ status.viewValue }}
+        </mat-option>
+      </mat-select>
+    </div>
+
+    <div class="button_container">
+      <button class="button" mat-flat-button (click)="Reset()">Reset</button>
+      <button class="button" mat-flat-button (click)="Apply()" mat-dialog-close>
+        Apply
+      </button>
+    </div>
+  </div>
+</mat-dialog-content>

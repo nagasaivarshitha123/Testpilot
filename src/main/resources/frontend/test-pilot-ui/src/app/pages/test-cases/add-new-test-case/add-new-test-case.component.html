@@ -1,0 +1,170 @@
+<div class="header">
+  <h4 mat-dialog-title *ngIf="!isTestCaseEdit">Add Test case</h4>
+  <h4 mat-dialog-title *ngIf="isTestCaseEdit">Edit Test case</h4>
+  <button mat-icon-button mat-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<mat-dialog-content>
+  <div class="mat_content_main">
+    <!-- <div class="test_case_left"> -->
+    <div class="auth__inputs">
+      <span> Test Case Name : </span>
+      <input
+        placeholder="Test Case Name"
+        name="name"
+        type="text"
+        [(ngModel)]="CreateTestCase.name"
+        #name="ngModel"
+      />
+    </div>
+
+    <div class="auth__description">
+      <span> Description </span>
+      <textarea
+        placeholder="Description"
+        name="description"
+        type="text"
+        [(ngModel)]="CreateTestCase.description"
+        #description="ngModel"
+      ></textarea>
+    </div>
+    <!-- </div> -->
+
+    <!-- <div class="test_case_right"> -->
+
+    <div style="height: 5px"></div>
+
+    <mat-radio-group
+      *ngIf="!isTestCaseEdit"
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      [(ngModel)]="selectedApiType"
+    >
+      <mat-radio-button
+        class="example-radio-button"
+        *ngFor="let type of apiType"
+        [value]="type.content"
+        (click)="setApiRepoType(type.content)"
+      >
+        {{ type.content }}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <label id="example-radio-group-label" *ngIf="!isTestCaseEdit"
+      >List of Repositories</label
+    >
+    <div *ngIf="!isTestCaseEdit">
+      <mat-select
+        [(ngModel)]="selectedTypeRequestData"
+        *ngIf="!isProps"
+        style="
+          font-size: 12px !important;
+          font-weight: 400 !important;
+          font-family: 'Inter' !important;
+        "
+      >
+        <mat-option
+          *ngFor="let typeData of selectedApiTypeData; let i = index"
+          [value]="typeData"
+          (click)="data()"
+          style="
+            font-size: 12px !important;
+            font-weight: 400 !important;
+            font-family: 'Inter' !important;
+          "
+        >
+          {{ typeData.name }}
+        </mat-option>
+      </mat-select>
+
+      <mat-select
+        [(ngModel)]="selectedRepoProps"
+        *ngIf="isProps"
+        style="
+          font-size: 12px !important;
+          font-weight: 400 !important;
+          font-family: 'Inter' !important;
+        "
+      >
+        <mat-option
+          style="
+            font-size: 12px !important;
+            font-weight: 400 !important;
+            font-family: 'Inter' !important;
+          "
+          [value]="selectedRepoProps"
+          (click)="data(selectedRepoProps)"
+        >
+          {{ selectedRepoProps.name }}
+        </mat-option>
+      </mat-select>
+    </div>
+
+    <label id="example-radio-group-label" *ngIf="!isTestCaseEdit"
+      >List of Requests</label
+    >
+
+    <div *ngIf="!isTestCaseEdit">
+      <mat-select
+        [(ngModel)]="selectedRequestData"
+        *ngIf="!isProps"
+        style="
+          font-size: 12px !important;
+          font-weight: 400 !important;
+          font-family: 'Inter' !important;
+        "
+      >
+        <mat-option
+          style="
+            font-size: 12px !important;
+            font-weight: 400 !important;
+            font-family: 'Inter' !important;
+          "
+          *ngFor="let typeData of selectedTypeRequestData.requests"
+          [value]="typeData"
+          (click)="setRequestId(typeData)"
+        >
+          {{ typeData.name }}
+        </mat-option>
+      </mat-select>
+
+      <mat-select
+        [(ngModel)]="selectedOption"
+        *ngIf="isProps"
+        style="
+          font-size: 12px !important;
+          font-weight: 400 !important;
+          font-family: 'Inter' !important;
+        "
+      >
+        <mat-option
+          *ngFor="let request of selectedApiTypeData.requests"
+          [value]="request.name"
+          (click)="setRequestId(request)"
+          style="
+            font-size: 12px !important;
+            font-weight: 400 !important;
+            font-family: 'Inter' !important;
+          "
+        >
+          {{ request.name }}
+        </mat-option>
+      </mat-select>
+    </div>
+    <!-- </div> -->
+    <div class="auth__buttons" *ngIf="!isTestCaseEdit">
+      <div style="flex: 1"></div>
+      <button mat-flat-button class="button1" (click)="saveTestCase()">
+        Save
+      </button>
+    </div>
+    <div class="auth__buttons" *ngIf="isTestCaseEdit">
+      <div style="flex: 1"></div>
+      <button mat-flat-button class="button1" (click)="updateTestCase()">
+        Update
+      </button>
+    </div>
+  </div>
+</mat-dialog-content>

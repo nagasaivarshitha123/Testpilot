@@ -1,0 +1,371 @@
+<div class="header">
+  <h4 mat-dialog-title *ngIf="isRequestEdit">Edit Request</h4>
+  <h4 mat-dialog-title *ngIf="isRequest && !isEdit">Add New Request</h4>
+  <h4 mat-dialog-title *ngIf="isRequest && isEdit">Edit Request</h4>
+  <h4 mat-dialog-title *ngIf="isRepoEdit">Edit Repository</h4>
+  <h4
+    mat-dialog-title
+    *ngIf="!isAssertions && !isRequest && !isRepoEdit && !isRequestEdit"
+  >
+    Add New Repository
+  </h4>
+  <h4 mat-dialog-title *ngIf="isAssertions && !isAssertionUpdate">
+    Add Assertions
+  </h4>
+  <h4 mat-dialog-title *ngIf="isAssertionUpdate">Update Assertions</h4>
+  <button mat-icon-button mat-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<!-- new repo -->
+<mat-dialog-content *ngIf="!isAssertions && !isRequest && !isRequestEdit">
+  <div class="mat_add_repository">
+    <div class="repo__inputs">
+      <span>Repository Name</span> &nbsp;
+      <input
+        placeholder="Repository Name"
+        name="name"
+        type="text"
+        [(ngModel)]="createRepositoryType.name"
+        #name="ngModel"
+      />
+    </div>
+
+    <div style="margin-top: 8px"></div>
+    <div class="repo__inputs">
+      <span style="margin-top: -8px">Repository Type</span>
+      &nbsp;
+      <mat-select
+        [(ngModel)]="createRepositoryType.repositoryType"
+        [disabled]="isRepoEdit"
+      >
+        <mat-option
+          *ngFor="let repo of repos"
+          [value]="repo.viewValue"
+          style="
+            font-size: 12px;
+            font-weight: 400;
+            font-family: 'Inter';
+            font-style: normal;
+          "
+        >
+          {{ repo.viewValue }}
+        </mat-option>
+      </mat-select>
+    </div>
+
+    <div class="repo__inputs">
+      <span>Repository URL</span>&nbsp;
+      <input
+        placeholder="Repository URL"
+        name="repositoryUrl"
+        type="text"
+        [(ngModel)]="createRepositoryType.repositoryUrl"
+        #repositoryUrl="ngModel"
+        [disabled]="isRepoEdit"
+      />
+    </div>
+
+    <div class="repo__description">
+      <span>Description</span>
+      <textarea
+        placeholder="Description"
+        name="description"
+        type="text"
+        [(ngModel)]="createRepositoryType.description"
+        #description="ngModel"
+      ></textarea>
+    </div>
+
+    <div class="auth__buttons" *ngIf="!isRepoEdit">
+      <!-- <button mat-flat-button class="button1">Browse</button> -->
+      <div style="flex: 1"></div>
+      <button mat-flat-button class="button1" (click)="handleCreate()">
+        Save
+      </button>
+    </div>
+
+    <div class="auth__buttons" *ngIf="isRepoEdit">
+      <div style="flex: 1"></div>
+      <button mat-flat-button class="button1" (click)="updateRepo()">
+        update
+      </button>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<!-- new request -->
+<mat-dialog-content *ngIf="isRequest">
+  <div class="mat_add_repository">
+    <div class="repo__inputs">
+      <span>Request Name</span> &nbsp;
+      <input
+        placeholder="Request Name"
+        name="name"
+        type="text"
+        [(ngModel)]="createRequestType.name"
+        #name="ngModel"
+      />
+    </div>
+
+    <div style="margin-top: 8px"></div>
+    <div class="repo__inputs">
+      <span style="margin-top: -8px">Request Type</span>
+      &nbsp;
+      <mat-select
+        [(ngModel)]="createRequestType.requestType"
+        [disabled]="isEdit"
+      >
+        <mat-option
+          *ngFor="let repo of repos"
+          [value]="repo.viewValue"
+          style="
+            font-size: 12px;
+            font-weight: 400;
+            font-family: 'Inter';
+            font-style: normal;
+          "
+        >
+          {{ repo.viewValue }}
+        </mat-option>
+      </mat-select>
+    </div>
+
+    <div class="repo__inputs">
+      <span style="margin-top: -8px">Request Method</span>
+      &nbsp;
+      <mat-select
+        [(ngModel)]="createRequestType.requestMethod"
+        [disabled]="isEdit"
+      >
+        <mat-option
+          *ngFor="let method of methods"
+          [value]="method.viewValue"
+          style="
+            font-size: 12px;
+            font-weight: 400;
+            font-family: 'Inter';
+            font-style: normal;
+          "
+        >
+          {{ method.viewValue }}
+        </mat-option>
+      </mat-select>
+    </div>
+
+    <div class="repo__inputs">
+      <span>Request URL</span>&nbsp;
+      <input
+        placeholder="Request URL"
+        name="requestUrl"
+        type="text"
+        [(ngModel)]="createRequestType.requestUrl"
+        #requestUrl="ngModel"
+        [disabled]="isEdit"
+      />
+    </div>
+
+    <div class="repo__description">
+      <span>Description</span>
+      <textarea
+        placeholder="Description"
+        name="description"
+        type="text"
+        [(ngModel)]="createRequestType.description"
+        #description="ngModel"
+      ></textarea>
+    </div>
+
+    <div class="auth__buttons">
+      <!-- <button mat-flat-button class="button1">Browse</button> -->
+      <div style="flex: 1"></div>
+      <button mat-flat-button class="button1" (click)="handleCreateRequest()">
+        Save
+      </button>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<!-- edit request -->
+<mat-dialog-content *ngIf="isRequestEdit">
+  <div class="mat_add_repository">
+    <div class="repo__inputs">
+      <span>Request Name</span> &nbsp;
+      <input
+        placeholder="Request Name"
+        name="name"
+        type="text"
+        [(ngModel)]="requestEditName"
+        #name="ngModel"
+      />
+    </div>
+
+    <div style="margin-top: 8px"></div>
+
+    <div class="repo__description">
+      <span>Description</span>
+      <textarea
+        placeholder="Description"
+        name="description"
+        type="text"
+        [(ngModel)]="requestEditDescription"
+        #description="ngModel"
+      ></textarea>
+    </div>
+
+    <div class="auth__buttons">
+      <!-- <button mat-flat-button class="button1">Browse</button> -->
+      <div style="flex: 1"></div>
+      <button mat-flat-button class="button1" (click)="handleEditRequest()">
+        Save
+      </button>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<!-- assertions -->
+<mat-dialog-content *ngIf="isAssertions">
+  <div class="mat_add_repository">
+    <div class="repo__inputs">
+      <span style="margin-top: -8px">Assertion Type</span>
+      <mat-select [(ngModel)]="updateAssertions.assertionType">
+        <mat-option
+          *ngFor="let assertion of assertions"
+          [value]="assertion.viewValue"
+          style="
+            font-size: 12px;
+            font-weight: 400;
+            font-family: 'Inter';
+            font-style: normal;
+          "
+        >
+          {{ assertion.viewValue }}
+        </mat-option>
+      </mat-select>
+    </div>
+
+    <div
+      class="repo__inputs"
+      *ngIf="updateAssertions.assertionType === 'JSON Path'"
+    >
+      <span>Assertion Path</span>
+      <input
+        placeholder="Path"
+        name="path"
+        type="text"
+        [(ngModel)]="updateAssertions.path"
+        #path="ngModel"
+      />
+    </div>
+    <div
+      style="margin-bottom: 8px"
+      *ngIf="updateAssertions.assertionType === 'JSON Path'"
+    ></div>
+
+    <!-- <div class="assertions_comparison"> -->
+    <div class="repo__inputs">
+      <span style="margin-top: -8px">Comparison</span>
+      <mat-select
+        [(ngModel)]="updateAssertions.comparison"
+        *ngIf="updateAssertions.assertionType === 'Status Code'"
+      >
+        <mat-option
+          *ngFor="let comparison of comparisons"
+          [value]="comparison.viewValue"
+          style="
+            font-size: 12px;
+            font-weight: 400;
+            font-family: 'Inter';
+            font-style: normal;
+          "
+        >
+          {{ comparison.viewValue }}
+        </mat-option>
+      </mat-select>
+
+      <mat-select
+        [(ngModel)]="updateAssertions.comparison"
+        *ngIf="updateAssertions.assertionType === 'JSON Path'"
+      >
+        <mat-option
+          *ngFor="let comparison of comparisonsJSON"
+          [value]="comparison.viewValue"
+          style="
+            font-size: 12px;
+            font-weight: 400;
+            font-family: 'Inter';
+            font-style: normal;
+          "
+        >
+          {{ comparison.viewValue }}
+        </mat-option>
+      </mat-select>
+      <!-- &nbsp; &nbsp; -->
+      <!-- <input
+        placeholder="Value"
+        *ngIf="updateAssertions.assertionType === 'JSON Path'"
+        name="value"
+        type="text"
+        [(ngModel)]="updateAssertions.value"
+        #value="ngModel"
+      />
+      <input
+        placeholder="Value"
+        *ngIf="updateAssertions.assertionType === 'Status Code'"
+        name="value"
+        type="text"
+        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+        [(ngModel)]="updateAssertions.value"
+        #value="ngModel"
+      /> -->
+    </div>
+
+    <div class="repo__inputs">
+      <span>Assertion Value</span>
+      <input
+        placeholder="Value"
+        *ngIf="updateAssertions.assertionType === 'JSON Path'"
+        name="value"
+        type="text"
+        [(ngModel)]="updateAssertions.value"
+        #value="ngModel"
+      />
+      <input
+        placeholder="Value"
+        *ngIf="updateAssertions.assertionType === 'Status Code'"
+        name="value"
+        type="text"
+        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+        [(ngModel)]="updateAssertions.value"
+        #value="ngModel"
+      />
+    </div>
+
+    <div class="auth__buttons" *ngIf="isAssertions && !isAssertionUpdate">
+      <div style="flex: 1"></div>
+      <button
+        mat-flat-button
+        class="button1"
+        (click)="updateTestCaseAssertions()"
+      >
+        Save
+      </button>
+    </div>
+    <div class="auth__buttons" *ngIf="isAssertionUpdate">
+      <div style="flex: 1"></div>
+      <button
+        mat-flat-button
+        class="button1"
+        (click)="updateTestCaseAssertions()"
+      >
+        update
+      </button>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<!-- <mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions> -->

@@ -1,0 +1,17 @@
+<div class="header">
+  <h4 mat-dialog-title>Confirmation</h4>
+  <button mat-icon-button mat-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<mat-dialog-content class="mat-typography">
+  <div class="mat_content_main">
+    <span> Are you sure you want to delete </span>
+
+    <div class="buttons">
+      <button mat-flat-button (click)="handleNo()" mat-dialog-close>No</button>
+      <button mat-flat-button (click)="handleYes()">Yes</button>
+    </div>
+  </div>
+</mat-dialog-content>

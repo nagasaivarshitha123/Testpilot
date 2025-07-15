@@ -1,0 +1,323 @@
+::ng-deep.mat-dialog-container {
+  padding: 0 !important;
+}
+
+::ng-deep.mat-dialog-content {
+  margin: 8px;
+  padding: 0px;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: #ff8a16 !important;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background-color: #d9b036;
+}
+
+.mat-dialog-content::-webkit-scrollbar {
+  display: none;
+}
+
+.mat-dialog-actions {
+  display: none;
+}
+
+.header {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: #d9b036;
+  height: 20px;
+  padding: 5px;
+  padding-top: 20px;
+  padding-left: 20px;
+
+  h4 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 15px;
+    // padding: 10px;
+    color: white;
+  }
+
+  button {
+    color: #ffffff;
+    position: relative;
+    top: -10px;
+  }
+}
+
+::ng-deep {
+  .mat-dialog-content {
+    max-height: 90vh;
+  }
+}
+
+.mat-dialog-content {
+  .mat_content_main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    padding: 10px;
+    // width: 100%;
+
+    .test_case_list_container {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+      .list_header {
+        background-color: #d9eeff;
+        padding: 10px;
+      }
+    }
+  }
+
+  .auth__inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    span {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      color: #1c242b;
+      opacity: 0.8;
+      width: 40%;
+    }
+
+    input {
+      width: 100%;
+      height: 31px;
+      border: 1px solid #bdbdbd90;
+      outline-color: #bdbdbd;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      border-radius: 4px;
+    }
+  }
+
+  .auth__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 15px;
+    position: sticky;
+    bottom: 0.5rem;
+    margin-right: 10px;
+    gap: 15px;
+
+    // button {
+    //   color: white;
+    //   background: linear-gradient(107.27deg, #333333 3.43%, #ffffff 251.34%);
+    // }
+
+    .button1 {
+      color: white;
+      background-color: #048e8b;
+      height: 30px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    .button2 {
+      color: white;
+      height: 30px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      background: linear-gradient(107.27deg, #333333 3.43%, #ffffff 251.34%);
+    }
+  }
+
+  .auth__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 10px;
+    // margin: 5px;
+
+    span {
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      color: #1c242b;
+      opacity: 0.8;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+
+    textarea {
+      width: 99%;
+      border-radius: 4px;
+      max-height: 400px !important;
+      border: 1px solid #bdbdbd90;
+      outline-color: #bdbdbd;
+      resize: vertical;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      height: 60px !important;
+    }
+  }
+
+  ::ng-deep .mat-checkbox-checked.mat-accent {
+    .mat-checkbox-ripple .mat-ripple-element {
+      background-color: #d9b036 !important;
+      border-color: #bdbdbd !important;
+    }
+
+    .mat-checkbox-background,
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+      background-color: #d9b036;
+      border-color: #bdbdbd !important;
+    }
+  }
+
+  ::ng-deep .mat-checkbox.mat-accent {
+    .mat-checkbox-ripple .mat-ripple-element {
+      background-color: #d9b036 !important;
+      border-color: #bdbdbd !important;
+    }
+  }
+
+  table {
+    width: 100%;
+    overflow: scroll;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: -5px;
+
+    thead {
+      padding: 10px;
+      background-color: #d9b036;
+
+      th {
+        padding: 20px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500 !important;
+        font-size: 12px !important;
+        line-height: 15px;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+  }
+
+  th.mat-header-cell {
+    color: white;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  tr.mat-header-row {
+    background-color: #d9b036;
+    color: white;
+  }
+
+  :root {
+    --input-border: #8b8a8b;
+    --input-focus-h: 245;
+    --input-focus-s: 100%;
+    --input-focus-l: 42%;
+  }
+
+  mat-header-cell,
+  mat-cell {
+    justify-content: center;
+  }
+
+  td,
+  th {
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+
+  th.mat-header-cell {
+    text-align: center !important;
+  }
+
+  th.mat-header-cell:nth-child(2),
+  th.mat-header-cell:nth-child(3) {
+    text-align: left !important;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    width: 190px;
+    padding-right: 8px !important;
+  }
+
+  td:nth-child(2),
+  td:nth-child(3) {
+    P {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0 auto;
+      max-width: 130px !important;
+      width: 190px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  td:nth-child(3),
+  th:nth-child(3),
+  mat-cell:nth-child(3),
+  thead:nth-child(3) {
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    max-width: 100px;
+  }
+
+  td.mat-cell,
+  td.mat-footer-cell,
+  th.mat-header-cell {
+    padding: 0;
+    border-bottom-width: 0px;
+    border-bottom-style: none;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

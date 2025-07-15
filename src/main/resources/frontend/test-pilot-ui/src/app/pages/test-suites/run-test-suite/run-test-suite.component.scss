@@ -1,0 +1,402 @@
+::ng-deep.mat-dialog-container {
+  padding: 0 !important;
+}
+
+::ng-deep.mat-dialog-content {
+  margin: 8px;
+  padding: 0px;
+}
+
+.mat-dialog-content::-webkit-scrollbar {
+  display: none;
+}
+.mat-dialog-actions {
+  display: none;
+}
+
+.header {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: #d9b036;
+  height: 20px;
+  padding: 5px;
+  padding-top: 20px;
+  padding-left: 20px;
+
+  h4 {
+    // font-family: "Inter";
+    // font-style: normal;
+    // font-weight: 400;
+    // font-size: 18px;
+    // line-height: 15px;
+    // // padding: 10px;
+    // color: white;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // height: 20px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    color: #ffffff;
+    text-transform: lowercase;
+    position: relative;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+  }
+
+  h4::first-letter {
+    text-transform: capitalize;
+  }
+
+  button {
+    color: #ffffff;
+    position: relative;
+    top: -10px;
+  }
+}
+
+.mat-dialog-content {
+  .mat_content_main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    padding: 10px;
+
+    .main_header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      span {
+        display: flex;
+        align-items: center;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 8px;
+        line-height: 10px;
+        color: #33333350;
+        margin-top: -10px;
+
+        h4 {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          color: #000000;
+          margin-top: 15px;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .linear_gradient {
+      height: 10px;
+      border-radius: 5px;
+      // background: linear-gradient(45deg, #219653, #eb5757c5);
+      background: #eb5757c5;
+      // margin-top: 8px;
+      margin: 5px;
+      color: white;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 10px;
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+    }
+
+    .bar_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 5px;
+
+      .right {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      .left {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+
+      span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+      }
+    }
+
+    .test_case_list_container {
+      margin-bottom: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+      mat-tab-group {
+        flex: 1;
+        overflow: hidden;
+        max-height: 90%;
+        min-height: 90%;
+
+        mat-tab {
+          height: auto;
+          overflow-y: scroll;
+          overflow-x: hidden;
+        }
+
+        .mat-tab-label {
+          flex: 1;
+          height: 35px !important;
+          padding: 5px;
+          color: #1c242b;
+          font-weight: 600;
+          font-size: 12px;
+          background-color: #e5e7e9;
+        }
+
+        .mat-tab-label.mat-tab-label-active {
+          flex: 1;
+          padding: 5px;
+          background-color: rgb(255, 255, 255);
+          color: rgb(0, 0, 0);
+          font-weight: 600;
+          box-shadow: -1px 1px 16px -4px rgba(0, 0, 0, 0.95);
+        }
+
+        .mat-ink-bar {
+          background-color: #d9b036 !important;
+        }
+      }
+
+      ::ng-deep.mat-tab-group.mat-primary .mat-ink-bar,
+      .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+        background-color: #d9b036 !important;
+      }
+
+      table {
+        // margin-top: 20px;
+        border-spacing: 0px !important;
+
+        thead {
+          padding: 10px;
+          background-color: #d9b036;
+
+          th {
+            padding: 20px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 500 !important;
+            font-size: 12px !important;
+            line-height: 15px;
+            text-align: center;
+            color: #ffffff;
+          }
+        }
+
+        th.mat-header-cell:nth-child(1) {
+          width: 40px;
+        }
+
+        th.mat-header-cell:nth-child(2),
+        th.mat-header-cell:nth-child(3) {
+          text-align: left !important;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 15px;
+          padding-right: 8px !important;
+          // max-width: 100px;
+        }
+
+        td:nth-child(2),
+        td:nth-child(3) {
+          P {
+            // display: -webkit-box;
+            // -webkit-line-clamp: 3;
+            // -webkit-box-orient: vertical;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // margin: 0 auto;
+            // max-width: 100px;
+            // width: 300px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 19px;
+            padding: 5px;
+          }
+        }
+
+        td {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 15px;
+          height: 33px !important;
+        }
+      }
+
+      table {
+        width: 100%;
+        background: rgb(255, 255, 255);
+      }
+      table > tbody > tr > td,
+      table > thead > tr > th {
+        border: 0 !important;
+      }
+
+      .list_header {
+        background-color: #d9eeff;
+        padding: 10px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 19px;
+        color: #555555;
+      }
+    }
+  }
+
+  ng-container {
+    cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+    // height: 80%;
+    overflow: scroll;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: -5px;
+
+    thead {
+      padding: 10px;
+      background-color: #d9b036;
+
+      th {
+        padding: 20px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500 !important;
+        font-size: 12px !important;
+        line-height: 15px;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+  }
+
+  th.mat-header-cell {
+    color: white;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  tr.mat-header-row {
+    background-color: #d9b036;
+    color: white;
+  }
+
+  :root {
+    --input-border: #8b8a8b;
+    --input-focus-h: 245;
+    --input-focus-s: 100%;
+    --input-focus-l: 42%;
+  }
+
+  mat-header-cell,
+  mat-cell {
+    justify-content: center;
+  }
+
+  td:nth-child(3),
+  th:nth-child(3),
+  mat-cell:nth-child(3),
+  thead:nth-child(3) {
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    // max-width: 100px;
+  }
+
+  td,
+  th {
+    text-align: center !important;
+    vertical-align: middle !important;
+    cursor: pointer;
+  }
+
+  th.mat-header-cell {
+    text-align: center !important;
+  }
+
+  td:nth-child(2),
+  td:nth-child(3) {
+    P {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      // margin: 0 auto;
+      // max-width: 30%;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  table > tbody > tr > td,
+  table > thead > tr > th {
+    border: 0 !important;
+    cursor: pointer;
+  }
+
+  pre {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 21px;
+    color: #333333;
+  }
+
+  td.mat-cell,
+  td.mat-footer-cell,
+  th.mat-header-cell {
+    padding: 0;
+    border-bottom-width: 0px;
+    border-bottom-style: none;
+  }
+}

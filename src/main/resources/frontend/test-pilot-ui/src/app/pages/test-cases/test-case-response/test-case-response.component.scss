@@ -1,0 +1,270 @@
+.response_panel_container {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+
+  p {
+    width: 520px;
+    height: 19px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1c242b;
+    margin-left: 20px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    width: 100%;
+
+    .info_row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+
+      h4 {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        color: #333333;
+        opacity: 0.5;
+        margin-right: 10px;
+      }
+
+      span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500 !important;
+        font-size: 12px;
+        color: #000000;
+      }
+    }
+  }
+
+  .tabs_container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabs_container {
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    height: 80%;
+    overflow-y: scroll;
+    flex: 1;
+
+    mat-tab-group {
+      mat-tab-body:nth-child(3) {
+        mat-tab-group {
+          max-height: 96%;
+          min-height: 96%;
+          mat-tab-body:nth-child(3) {
+            max-height: 400px;
+            min-height: 300px;
+          }
+        }
+      }
+    }
+
+    mat-tab-group {
+      flex: 1;
+      overflow: hidden;
+      max-height: 96%;
+      min-height: 96%;
+
+      mat-tab {
+        height: auto;
+        overflow-y: scroll;
+        // overflow-x: hidden;
+      }
+
+      .mat-tab-label {
+        flex: 1;
+        min-width: 134px !important;
+        height: 35px !important;
+        padding: 5px;
+        color: #1c242b;
+        font-weight: 600;
+        font-size: 12px;
+        background-color: #e5e7e9;
+      }
+
+      .mat-tab-label.mat-tab-label-active {
+        flex: 1;
+        min-width: 134px !important;
+        padding: 5px;
+        // background-color: rgba(232, 232, 232, 0.955);
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        box-shadow: -1px 1px 16px -4px rgba(0, 0, 0, 0.95);
+      }
+
+      .mat-ink-bar {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .second_tabs {
+    .mat-ink-bar {
+      background-color: #d9b036 !important;
+    }
+  }
+
+  pre {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 21px;
+    color: #333333;
+  }
+
+  table {
+    // margin-top: 20px;
+    border-spacing: 0px !important;
+    padding-bottom: 10px;
+
+    thead {
+      padding: 10px;
+      background-color: #d9b036;
+
+      th {
+        padding: 20px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500 !important;
+        font-size: 12px !important;
+        line-height: 15px;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+
+    td {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      height: 33px !important;
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        max-width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(215, 215, 215);
+        color: #000000;
+        text-align: center;
+        border-radius: 4px;
+        padding: 5px 0;
+        font-family: "Inter";
+        font-weight: 400;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        transform: translateX(-30%);
+        overflow: scroll;
+      }
+
+      .tooltiptext::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    background: rgb(255, 255, 255);
+  }
+  table > tbody > tr > td,
+  table > thead > tr > th {
+    border: 0 !important;
+  }
+
+  td:nth-child(3),
+  td:nth-child(5),
+  td:nth-child(6) {
+    P {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0 auto;
+      max-width: 100px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 19px;
+      padding: 0px 5px 0px 5px;
+    }
+  }
+
+  .linear_gradient {
+    height: 10px;
+    border-radius: 5px;
+    // background: linear-gradient(45deg, #219653, #eb5757c5);
+    background: #eb5757c5;
+    // margin-top: 8px;
+    margin: 5px;
+    color: white;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 10px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+
+  .bar_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 96%;
+    margin-top: 5px;
+
+    .right {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .left {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding-left: 10px;
+    }
+
+    span {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+    }
+  }
+}

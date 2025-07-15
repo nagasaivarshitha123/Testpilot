@@ -1,0 +1,195 @@
+<div class="manage__container">
+  <div class="manage__card">
+    <div class="manage__header">
+      <h4>manage</h4>
+      <div
+        style="
+          height: 5px;
+          background: white;
+          position: relative;
+          top: -21px !important;
+        "
+      >
+        <mat-progress-bar
+          mode="indeterminate"
+          *ngIf="isLoading"
+        ></mat-progress-bar>
+      </div>
+    </div>
+
+    <div class="search_container">
+      <button mat-flat-button (click)="openNewTestSuitePopUp()">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.4716 1.52869C4.34659 1.40371 4.17705 1.3335 4.00027 1.3335C3.8235 1.3335 3.65396 1.40371 3.52894 1.52869L2.66694 2.39069L2.4716 2.19535C2.34587 2.07392 2.17747 2.00672 2.00267 2.00824C1.82787 2.00976 1.66066 2.07987 1.53706 2.20347C1.41345 2.32708 1.34334 2.49429 1.34182 2.66909C1.3403 2.84388 1.4075 3.01229 1.52894 3.13802L2.1956 3.80469C2.32062 3.92967 2.49016 3.99988 2.66694 3.99988C2.84371 3.99988 3.01325 3.92967 3.13827 3.80469L4.4716 2.47135C4.59659 2.34634 4.6668 2.1768 4.6668 2.00002C4.6668 1.82324 4.59659 1.65371 4.4716 1.52869ZM7.3336 11.6667C7.3336 11.7774 7.3376 11.8867 7.3456 11.9954H6.66694C6.49702 11.9952 6.33358 11.9301 6.21003 11.8135C6.08647 11.6968 6.01211 11.5374 6.00216 11.3678C5.9922 11.1981 6.04739 11.0311 6.15645 10.9008C6.26551 10.7705 6.42021 10.6868 6.58894 10.6667L6.66694 10.662H7.45027C7.37243 10.9912 7.33327 11.3284 7.3336 11.6667ZM11.6669 7.33335C12.4848 7.33202 13.2862 7.56323 13.9776 8.00002H14.0029L14.0803 7.99535C14.2489 7.9753 14.4035 7.89166 14.5126 7.7615C14.6216 7.63134 14.6769 7.46447 14.6671 7.29495C14.6573 7.12542 14.5832 6.96602 14.4599 6.84926C14.3366 6.73251 14.1734 6.66721 14.0036 6.66669H6.66694L6.58894 6.67135C6.42021 6.69142 6.26551 6.77516 6.15645 6.90547C6.04739 7.03577 5.9922 7.2028 6.00216 7.37242C6.01211 7.54205 6.08647 7.70148 6.21003 7.81812C6.33358 7.93477 6.49702 7.99983 6.66694 8.00002H9.35627C10.0477 7.56323 10.8491 7.33202 11.6669 7.33335ZM14.0029 2.66669H6.66694L6.58894 2.67135C6.42021 2.69142 6.26551 2.77516 6.15645 2.90547C6.04739 3.03577 5.9922 3.2028 6.00216 3.37242C6.01211 3.54205 6.08647 3.70148 6.21003 3.81812C6.33358 3.93477 6.49702 3.99983 6.66694 4.00002H14.0029L14.0803 3.99535C14.2489 3.9753 14.4035 3.89166 14.5126 3.7615C14.6216 3.63134 14.6769 3.46447 14.6671 3.29495C14.6573 3.12542 14.5832 2.96602 14.4599 2.84926C14.3366 2.73251 14.1734 2.66721 14.0036 2.66669H14.0029ZM4.4716 10.1954C4.34659 10.0704 4.17705 10.0002 4.00027 10.0002C3.8235 10.0002 3.65396 10.0704 3.52894 10.1954L2.66694 11.0574L2.4716 10.862C2.34587 10.7406 2.17747 10.6734 2.00267 10.6749C1.82787 10.6764 1.66066 10.7465 1.53706 10.8701C1.41345 10.9937 1.34334 11.161 1.34182 11.3358C1.3403 11.5106 1.4075 11.679 1.52894 11.8047L2.1956 12.4714C2.32062 12.5963 2.49016 12.6665 2.66694 12.6665C2.84371 12.6665 3.01325 12.5963 3.13827 12.4714L4.4716 11.138C4.59659 11.013 4.6668 10.8435 4.6668 10.6667C4.6668 10.4899 4.59659 10.3204 4.4716 10.1954ZM3.52894 5.86202C3.65467 5.74058 3.82307 5.67339 3.99787 5.6749C4.17267 5.67642 4.33988 5.74654 4.46348 5.87014C4.58709 5.99375 4.6572 6.16096 4.65872 6.33575C4.66024 6.51055 4.59304 6.67895 4.4716 6.80469L3.13827 8.13802C3.01325 8.263 2.84371 8.33321 2.66694 8.33321C2.49016 8.33321 2.32062 8.263 2.1956 8.13802L1.52894 7.47135C1.4075 7.34562 1.3403 7.17722 1.34182 7.00242C1.34334 6.82762 1.41345 6.66041 1.53706 6.53681C1.66066 6.4132 1.82787 6.34309 2.00267 6.34157C2.17747 6.34005 2.34587 6.40725 2.4716 6.52869L2.66694 6.72402L3.52894 5.86202ZM15.3336 11.6667C15.3336 10.6942 14.9473 9.7616 14.2597 9.07396C13.572 8.38633 12.6394 8.00002 11.6669 8.00002C10.6945 8.00002 9.76185 8.38633 9.07421 9.07396C8.38658 9.7616 8.00027 10.6942 8.00027 11.6667C8.00027 12.6391 8.38658 13.5718 9.07421 14.2594C9.76185 14.947 10.6945 15.3334 11.6669 15.3334C12.6394 15.3334 13.572 14.947 14.2597 14.2594C14.9473 13.5718 15.3336 12.6391 15.3336 11.6667ZM12.0003 12L12.0009 13.6687C12.0009 13.7571 11.9658 13.8419 11.9033 13.9044C11.8408 13.9669 11.756 14.002 11.6676 14.002C11.5792 14.002 11.4944 13.9669 11.4319 13.9044C11.3694 13.8419 11.3343 13.7571 11.3343 13.6687V12H9.66427C9.57587 12 9.49108 11.9649 9.42857 11.9024C9.36606 11.8399 9.33094 11.7551 9.33094 11.6667C9.33094 11.5783 9.36606 11.4935 9.42857 11.431C9.49108 11.3685 9.57587 11.3334 9.66427 11.3334H11.3336V9.66669C11.3336 9.57828 11.3687 9.4935 11.4312 9.43098C11.4937 9.36847 11.5785 9.33335 11.6669 9.33335C11.7553 9.33335 11.8401 9.36847 11.9026 9.43098C11.9652 9.4935 12.0003 9.57828 12.0003 9.66669V11.3334H13.6649C13.7533 11.3334 13.8381 11.3685 13.9006 11.431C13.9632 11.4935 13.9983 11.5783 13.9983 11.6667C13.9983 11.7551 13.9632 11.8399 13.9006 11.9024C13.8381 11.9649 13.7533 12 13.6649 12H12.0003Z"
+            fill="white"
+          />
+        </svg>
+        Add Test Suites
+      </button>
+
+      <div class="input_container">
+        <i
+          class="fa-solid fa-magnifying-glass fa-beat-fade"
+          style="color: #060404; margin-left: 5px; margin-right: 5px"
+        ></i>
+
+        <input
+          placeholder="Search"
+          name="search"
+          type="text"
+          [(ngModel)]="filterTestCase.searchText"
+          #search="ngModel"
+          (keyup)="delayedSearch($event)"
+        />
+      </div>
+    </div>
+
+    <div class="table_container" *ngIf="ELEMENT_DATA.length > 0">
+      <table mat-table [dataSource]="dataSource">
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Tc.No.</th>
+          <td mat-cell *matCellDef="let element; let i = index">
+            {{ pageIndex + i + 1 }}
+          </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Test Suite Name</th>
+          <td mat-cell *matCellDef="let element">
+            <p
+              style="
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                text-align: left;
+                cursor: pointer;
+              "
+              pTooltip="{{ element.name }}"
+              showDelay="600"
+            >
+              {{ element.name }}
+            </p>
+          </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef>Description</th>
+          <td mat-cell *matCellDef="let element">
+            <p
+              style="
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                text-align: left;
+                cursor: pointer;
+              "
+              pTooltip="{{ element.description }}"
+              showDelay="600"
+            >
+              {{ element.description }}
+            </p>
+          </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="creationDate">
+          <th mat-header-cell *matHeaderCellDef>Creation Date</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.creationDate | date : "dd-MM-yyyy" }}
+          </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="testCases">
+          <th mat-header-cell *matHeaderCellDef>No of Test Cases</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.testCasesCount }}
+          </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-icon-button
+              (click)="runTestSuit(element)"
+              [disabled]="element.testCasesCount === 0"
+            >
+              <i
+                class="fa-solid fa-play fa-beat"
+                style="
+                  color: #048e8b;
+                  --fa-animation-delay: 1s;
+                  --fa-animation-duration: 3s;
+                  --fa-animation-iteration-count: 1;
+                "
+              ></i>
+              <!-- <mat-icon
+                aria-label="Example icon-button with a heart icon"
+                style="color: #048e8b"
+                >play_arrow</mat-icon
+              > -->
+            </button>
+            <button mat-icon-button (click)="setEdit(element)">
+              <i
+                class="fa-solid fa-pen fa-bounce"
+                style="
+                  color: #228f31;
+                  --fa-animation-delay: 1.5s;
+                  --fa-animation-duration: 3s;
+                  --fa-animation-iteration-count: 1;
+                "
+              ></i>
+            </button>
+            <button mat-icon-button (click)="deleteTestSuit(element)">
+              <i
+                class="fa-solid fa-trash fa-shake"
+                style="
+                  color: #eb5757;
+                  --fa-animation-delay: 2s;
+                  --fa-animation-duration: 3s;
+                  --fa-animation-iteration-count: 1;
+                "
+              ></i>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <!-- <mat-paginator
+        [pageSizeOptions]="[10, 20]"
+        showFirstLastButtons
+      ></mat-paginator> -->
+
+      <mat-paginator
+        showFirstLastButtons
+        [length]="length"
+        [pageSize]="filterTestCase.pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        [pageIndex]="currentPageIndex"
+        (page)="pageEvent = onChangePage($event)"
+      >
+      </mat-paginator>
+    </div>
+
+    <div *ngIf="ELEMENT_DATA.length === 0" class="testSuite_manage_noContent">
+      <img src="assets/no-content.gif" />
+      <span>No test suites to be displayed</span>
+    </div>
+  </div>
+</div>

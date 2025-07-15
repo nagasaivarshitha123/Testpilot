@@ -1,0 +1,224 @@
+::ng-deep.mat-dialog-container {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+::ng-deep.mat-dialog-content {
+  margin: 8px;
+  padding: 0px;
+}
+
+.header {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: #d9b036;
+  height: 20px;
+  padding: 5px;
+  padding-top: 20px;
+  padding-left: 20px;
+
+  h4 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 15px;
+    color: white;
+  }
+
+  button {
+    color: #ffffff;
+    position: relative;
+    top: -10px;
+  }
+}
+
+.date__container {
+  display: flex;
+  margin: 10px;
+}
+
+.filters_container {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  align-items: center !important;
+  justify-content: center !important;
+
+  .button_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+
+    .button {
+      color: white;
+      height: 30px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      background: linear-gradient(107.27deg, #333333 3.43%, #ffffff 251.34%);
+    }
+  }
+
+  .label_containers {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 6px;
+    flex: 1;
+
+    label {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      color: #1c242b;
+      margin-bottom: 2px;
+    }
+
+    .input_container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex: 1;
+      border: 1px solid #bdbdbd;
+      border-radius: 4px;
+      width: 163px;
+      height: 25px !important;
+      margin-left: 15px;
+
+      input {
+        border: none;
+        outline: none;
+        width: 155px;
+        margin: 0px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        color: #333333;
+        padding-left: 2px;
+      }
+
+      .mat-datepicker-content .mat-calendar-next-button,
+      .mat-datepicker-content .mat-calendar-previous-button,
+      .mat-datepicker-toggle {
+        color: rgba(0, 0, 0, 0.54);
+        position: relative;
+        right: 29px;
+        zoom: 0.8;
+      }
+
+      .cdk-overlay-pane,
+      .mat-datepicker-popup {
+        mat-datepicker-content {
+          display: none;
+          mat-calendar > .mat-calendar-content {
+            display: none;
+          }
+        }
+      }
+    }
+
+    mat-select {
+      border: 1px solid #bdbdbd;
+      border-radius: 4px;
+      padding: 8px;
+      margin: 5px 0px 5px 0px;
+      outline: none;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      flex: 1;
+
+      mat-option {
+        display: none !important;
+      }
+    }
+  }
+
+  mat-form-field > .mat-form-field-wrapper {
+    .mat-form-field-flex {
+      // border: 2px solid #bdbdbd;
+      border-radius: 4px;
+      padding: 4px;
+      height: 35px;
+
+      .mat-form-field-infix {
+        padding: 0px;
+        border-top: none;
+      }
+
+      .mat-form-field-prefix .mat-icon-button,
+      .mat-form-field-suffix .mat-icon-button {
+        height: 1.5em;
+        width: 1.5em;
+        position: relative;
+        top: -10px;
+      }
+    }
+  }
+
+  mat-datepicker-toggle > button {
+    color: #6e6c6c !important;
+    position: relative;
+    top: 0;
+  }
+
+  mat-datepicker-toggle > .mat-icon-button {
+    color: #6e6c6c !important;
+    position: relative;
+    top: 0;
+  }
+
+  mat-calendar > .mat-calendar-content {
+    mat-month-view,
+    mat-multi-year-view,
+    mat-year-view {
+      table {
+        thead {
+          padding: 0px;
+          background-color: #ffffff !important;
+        }
+        th {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500 !important;
+          font-size: 12px !important;
+          text-align: center;
+          color: #000000 !important;
+        }
+        .mat-calendar-body {
+          td {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            height: 33px !important;
+          }
+        }
+      }
+    }
+  }
+
+  mat-calendar > mat-calendar-header {
+    .mat-calendar-controls {
+      .mat-button,
+      .mat-icon-button,
+      .mat-stroked-button {
+        color: black !important;
+      }
+    }
+  }
+}

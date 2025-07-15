@@ -1,0 +1,42 @@
+<div class="header">
+  <h4 mat-dialog-title>Add Test Cases</h4>
+  <button mat-icon-button mat-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<mat-dialog-content class="mat-typography" *ngIf="NotExistingCases.length > 0">
+  <div class="mat_ext_testCase_content_main">
+    <span style="width: 300px"> List of TestCases </span>
+    <section *ngFor="let item of NotExistingCases">
+      <mat-checkbox
+        [checked]="item.value"
+        (change)="toggle($event, item)"
+        style="
+          font-family: 'Inter';
+          font-style: normal !important;
+          font-weight: 400 !important;
+          font-size: 12px !important;
+          line-height: 15px !important;
+        "
+        >{{ item.name }}</mat-checkbox
+      >
+    </section>
+  </div>
+
+  <div class="buttons">
+    <button mat-flat-button (click)="handleSave()">Save</button>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-content
+  class="mat-typography"
+  *ngIf="NotExistingCases.length === 0"
+>
+  <div>
+    <div class="notestcase_container">
+      <img src="assets/no-content.gif" />
+      <p>No Test Cases Available to add</p>
+    </div>
+  </div>
+</mat-dialog-content>
